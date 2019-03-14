@@ -10,7 +10,7 @@ public class Sort {
     private static int memcmp(byte[] a, byte[] b, int sz) {
         for (int i = 0; i < sz; i++) {
             if (a[i] != b[i]) {
-                return Byte.toUnsignedInt(a[i]) - Byte.toUnsignedInt(b[i]);
+                return Byte.compareUnsigned(a[i], b[i]);
             }
         }
         return 0;
@@ -45,7 +45,6 @@ public class Sort {
 
         @Override
         public int compareTo(Row o) {
-
             return memcmp(mKey, o.getKey(), 10);
         }
 
@@ -69,7 +68,7 @@ public class Sort {
     }
 
     private static void sortingData() throws IOException {
-        final String fileName = "C:\\Users\\Elias\\Desktop\\Sigmod\\Sigmod2019\\src\\main\\resources\\input1";
+        final String fileName = System.getProperty("user.dir") + "\\src\\main\\resources\\input1";
         final File file = new File(fileName);
 
         final List<Row> list = new ArrayList<>();
@@ -84,7 +83,7 @@ public class Sort {
         final List<Row> res =
                 list.parallelStream().sorted(sCmp).collect(Collectors.toList());
 
-        try (FileOutputStream fos = new FileOutputStream("C:\\Users\\Elias\\Desktop\\Sigmod\\Sigmod2019\\src\\main\\resources\\output\\output")) {
+        try (FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\output\\output")) {
             res.forEach(x -> {
                 try {
                     fos.write(x.getKey());
