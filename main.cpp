@@ -6,7 +6,7 @@
 
 // https://stackoverflow.com/questions/17598572/read-write-to-binary-files-in-c
 
-#define TOTALROWS 10000
+#define TOTALROWS 40000
 #define DEBUG 1
 
 struct row {
@@ -43,7 +43,7 @@ void readFile(row rows[]) {
     fclose(file);
 }
 
-void writeOuput(const row *rows) {
+void writeOutput(const row *rows) {
     FILE *write_ptr;
     write_ptr = fopen("output", "wb");  // w for write, b for binary
     for (int i = 0; i < TOTALROWS; i++) {
@@ -64,7 +64,7 @@ int main() {
     // Sorting Algorithm. Need to be implemented a parallel sorting algorithm
     qsort(rows, structs_len, sizeof(struct row), rowCmp);
 
-    writeOuput(rows);
+    writeOutput(rows);
 
     t = clock() - t;
     double time_taken = (((double) t) / CLOCKS_PER_SEC) * 1000; // in seconds
