@@ -2,12 +2,25 @@
 #include <ctime>
 #include "string.h"
 #include "stdio.h"
-
+#include <sys/stat.h>
 
 // https://stackoverflow.com/questions/17598572/read-write-to-binary-files-in-c
 
-#define TOTALROWS 40000
 #define DEBUG 1
+
+// Global Variables
+long int TOTALROWS;
+
+
+long int calTotalNoOfRows(const char *file_name) {
+    struct stat st;
+
+    /*get the size using stat()*/
+
+    stat(file_name, &st);
+
+    return (st.st_size) / 100;
+}
 
 struct row {
     unsigned char key[10];
@@ -55,6 +68,9 @@ int main() {
 
     clock_t t;
     t = clock();
+
+    // Retrieve total number of rows.
+    TOTALROWS = calTotalNoOfRows("input");
 
     row rows[TOTALROWS];
     readFile(rows);
