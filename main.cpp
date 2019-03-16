@@ -74,7 +74,6 @@ void writeOutput(const row *rows, const long int totalRows) {
 
 int main() {
 
-
     // Retrieve total number of rows.
     TOTALROWS = calTotalNoOfRows("input");
 
