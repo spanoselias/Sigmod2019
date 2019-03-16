@@ -4,8 +4,11 @@
 
 #ifndef SORTINGALGORITHM_STRUCTURES_H
 #define SORTINGALGORITHM_STRUCTURES_H
- struct row {
-    unsigned char key[10];
+
+#include <cstdlib>
+
+struct row {
+    unsigned char key[10] ;
     unsigned char data[90];
 };
 #endif //SORTINGALGORITHM_STRUCTURES_H

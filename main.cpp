@@ -1,13 +1,14 @@
 #include <ctime>
 #include "string.h"
 #include "stdio.h"
-#include "timer.c"
+#include "Utils/timer.c"
 #include "structures.h"
 #include <sys/stat.h>
 #include <cstdlib>
 
 // https://stackoverflow.com/questions/17598572/read-write-to-binary-files-in-c
-
+// set stack size unlimited ( ulimit -s hard )
+// http://icps.u-strasbg.fr/~bastoul/local_copies/lee.html
 #define DEBUG 1
 
 // Global Variables
@@ -38,14 +39,14 @@ int rowCmp(const void *row1,
     return result;
 }
 
-void printExecutionTime(clock_t &t) {
+void printExecutionTime(clock_t &t, const char *msg) {
     t = clock() - t;
     double time_taken = (((double) t) / CLOCKS_PER_SEC) * 1000; // in seconds
 
-    printf("Sorting took: [%f] seconds to execute \n", time_taken);
+    printf("%s took: [%f] seconds to execute \n", msg, time_taken);
 }
 
-void readFile(row rows[]) {
+void readFile(row *rows) {
     FILE *file;
     row buf;
 
@@ -73,28 +74,27 @@ void writeOutput(const row *rows, const long int totalRows) {
 
 int main() {
 
-    clock_t t = startTimer();
 
     // Retrieve total number of rows.
     TOTALROWS = calTotalNoOfRows("input");
 
-//   row *rows = static_cast<row *>(malloc(TOTALROWS * sizeof(row)));
-     row rows [TOTALROWS] ;
-     struct row * newRow;
-     newRow = (row *) malloc(sizeof(struct row) * TOTALROWS);
+    row rows[TOTALROWS];
 
-    readFile(newRow);
+    clock_t t0 = startTimer();
+    readFile(rows);
+    printExecutionTime(t0, "Reading the file");
 
     size_t structs_len = sizeof(rows) / sizeof(struct row);
 
+    clock_t t1 = startTimer();
     // Sorting Algorithm. Need to be implemented a parallel sorting algorithm
     qsort(rows, structs_len, sizeof(struct row), rowCmp);
+    printExecutionTime(t1, "Sorting the file");
 
-//    clock_t t2 = startTimer();
-     writeOutput(rows, TOTALROWS);
-//    printExecutionTime(t2);
+    clock_t t2 = startTimer();
+    writeOutput(rows, TOTALROWS);
+    printExecutionTime(t2, "Writing the file");
 
-    printExecutionTime(t);
 
     return 0;
 }
