@@ -1,19 +1,26 @@
+/***********************************************************************************/
+/*                                     LIBRARIES                                   */
+/***********************************************************************************/
 #include <ctime>
 #include "string.h"
 #include "stdio.h"
 #include "Utils/timer.c"
-#include "structures.h"
+#include "DataStructures/structures.h"
 #include <sys/stat.h>
 #include <cstdlib>
 
 // https://stackoverflow.com/questions/17598572/read-write-to-binary-files-in-c
 // set stack size unlimited ( ulimit -s hard )
 // http://icps.u-strasbg.fr/~bastoul/local_copies/lee.html
+
 #define DEBUG 1
 
 // Global Variables
-long int TOTALROWS;
+long int total_rows;
 
+/***********************************************************************************/
+/*                                 FUNCTIONS                                       */
+/***********************************************************************************/
 long int calTotalNoOfRows(const char *fileName) {
     struct stat st;
 
@@ -28,6 +35,9 @@ void printExecutionTime(clock_t &t);
 
 clock_t startTimer();
 
+/***********************************************************************************/
+/*                           Sorting Comparator                                    */
+/***********************************************************************************/
 int rowCmp(const void *row1,
            const void *row2) {
 
@@ -41,9 +51,9 @@ int rowCmp(const void *row1,
 
 void printExecutionTime(clock_t &t, const char *msg) {
     t = clock() - t;
-    double time_taken = (((double) t) / CLOCKS_PER_SEC) * 1000; // in seconds
+    double time_taken = (((double) t) / CLOCKS_PER_SEC); // in seconds
 
-    printf("%s took: [%f] seconds to execute \n", msg, time_taken);
+    printf("%s took: [%f] seconds to execute. \n", msg, time_taken);
 }
 
 void readFile(row *rows) {
@@ -55,7 +65,7 @@ void readFile(row *rows) {
         fprintf(stderr, "\nError opening file\n");
     }
 
-    int idx = 0;
+    long idx = 0;
     while (fread(&buf, sizeof(struct row), 1, file)) {
         memcpy(&rows[idx], &buf, sizeof(struct row));
         ++idx;
@@ -66,7 +76,7 @@ void readFile(row *rows) {
 
 void writeOutput(const row *rows, const long int totalRows) {
     FILE *write_ptr;
-    write_ptr = fopen("output", "wb");  // w for write, b for binary
+    write_ptr = fopen("Resources/output", "wb");  // w for write, b for binary
     for (int i = 0; i < totalRows; i++) {
         fwrite(&rows[i], sizeof(struct row), 1, write_ptr);
     }
@@ -75,9 +85,9 @@ void writeOutput(const row *rows, const long int totalRows) {
 int main() {
 
     // Retrieve total number of rows.
-    TOTALROWS = calTotalNoOfRows("input");
+    total_rows = calTotalNoOfRows("input");
 
-    row rows[TOTALROWS];
+    row rows[total_rows];
 
     clock_t t0 = startTimer();
     readFile(rows);
@@ -91,7 +101,7 @@ int main() {
     printExecutionTime(t1, "Sorting the file");
 
     clock_t t2 = startTimer();
-    writeOutput(rows, TOTALROWS);
+    writeOutput(rows, total_rows);
     printExecutionTime(t2, "Writing the file");
 
 
