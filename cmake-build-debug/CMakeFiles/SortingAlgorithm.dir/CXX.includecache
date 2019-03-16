@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/elias/Desktop/Sigmod2019/Utils/timer.c
+bits/types/clock_t.h
+-
+time.h
+-
+stdio.h
+-
+
+/home/elias/Desktop/Sigmod2019/main.cpp
+ctime
+-
+string.h
+/home/elias/Desktop/Sigmod2019/string.h
+stdio.h
+/home/elias/Desktop/Sigmod2019/stdio.h
+Utils/timer.c
+/home/elias/Desktop/Sigmod2019/Utils/timer.c
+structures.h
+/home/elias/Desktop/Sigmod2019/structures.h
+sys/stat.h
+-
+cstdlib
+-
+
+/home/elias/Desktop/Sigmod2019/structures.h
+cstdlib
+-
+
