@@ -12,13 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c8554b3-0ca4-47a2-8e67-07dfdd47740d" name="Default Changelist" comment="Default Changelist">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input" beforeDir="false" afterPath="$PROJECT_DIR$/input" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/SortingAlgorithm" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SortingAlgorithm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output" beforeDir="false" afterPath="$PROJECT_DIR$/output" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structures.h" beforeDir="false" afterPath="$PROJECT_DIR$/structures.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/timer.c" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/timer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structures.h" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructures/structures.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +34,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="95" column="47" lean-forward="true" selection-start-line="95" selection-start-column="47" selection-end-line="95" selection-end-column="47" />
+            <state relative-caret-position="521">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -44,7 +44,7 @@
         </entry>
       </file>
       <file leaf-file-name="structures.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/structures.h">
+        <entry file="file://$PROJECT_DIR$/DataStructures/structures.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
               <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
@@ -66,6 +66,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>rows</find>
+      <find>input</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,7 +114,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,10 +121,16 @@
               <item name="Sort" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sigmod2019" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Sort" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sigmod2019" type="462c0819:PsiDirectoryNode" />
+              <item name="DataStructures" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -133,11 +139,13 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Utils" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DataStructures" />
+      <recent name="$PROJECT_DIR$/Resources" />
+      <recent name="$PROJECT_DIR$/Utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -175,7 +183,8 @@
       <workItem from="1552679020425" duration="3183000" />
       <workItem from="1552690334045" duration="2542000" />
       <workItem from="1552693533693" duration="2014000" />
-      <workItem from="1552723528218" duration="242000" />
+      <workItem from="1552723528218" duration="750000" />
+      <workItem from="1552756766428" duration="3066000" />
     </task>
     <task id="LOCAL-00001" summary="1) Rename variables.">
       <created>1552668511775</created>
@@ -198,22 +207,31 @@
       <option name="project" value="LOCAL" />
       <updated>1552681790519</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactor the code.">
+      <created>1552723835086</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1552723835086</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15578000" />
+    <option name="totallyTimeSpent" value="19152000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1175" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11530054" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13989072" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.20932755" />
       <window_info anchor="bottom" id="CMake" order="7" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32917467" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.19739696" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18426104" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32937366" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -224,12 +242,10 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Messages" order="7" visible="true" weight="0.20932755" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="11" weight="0.23542117" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,24 +258,25 @@
     <MESSAGE value="1) Rename variables." />
     <MESSAGE value="1) Retrieving total rows of the file." />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Refactor the code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor the code." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>79</line>
+          <line>88</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>53</line>
+          <line>63</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>49</line>
+          <line>59</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
@@ -318,6 +335,30 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1501">
+          <caret line="79" column="24" lean-forward="true" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataStructures/structures.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1824">
           <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
           <folding>
@@ -326,7 +367,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/structures.h">
+    <entry file="file://$PROJECT_DIR$/DataStructures/structures.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
@@ -350,7 +391,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/structures.h">
+    <entry file="file://$PROJECT_DIR$/DataStructures/structures.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
@@ -374,7 +415,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/structures.h">
+    <entry file="file://$PROJECT_DIR$/DataStructures/structures.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
@@ -398,7 +439,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/structures.h">
+    <entry file="file://$PROJECT_DIR$/DataStructures/structures.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
@@ -430,20 +471,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/structures.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.cpp" />
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -451,10 +479,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/stdio.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="231" column="13" selection-start-line="231" selection-start-column="13" selection-end-line="231" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataStructures/structures.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="95" column="47" lean-forward="true" selection-start-line="95" selection-start-column="47" selection-end-line="95" selection-end-column="47" />
+        <state relative-caret-position="521">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
