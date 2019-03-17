@@ -6,11 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/elias/Desktop/Sigmod2019/Utils/Timer.c
-bits/types/clock_t.h
--
-time.h
--
-stdio.h
--
-

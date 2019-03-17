@@ -5,7 +5,6 @@
 #include "string.h"
 #include "stdio.h"
 #include "Utils/Timer.c"
-#include "Utils/Files.cpp"
 #include "DataStructures/structures.h"
 #include <sys/stat.h>
 #include <cstdlib>
@@ -13,6 +12,7 @@
 // https://stackoverflow.com/questions/17598572/read-write-to-binary-files-in-c
 // set stack size unlimited ( ulimit -s hard )
 // http://icps.u-strasbg.fr/~bastoul/local_copies/lee.html
+// https://lemire.me/blog/2012/06/26/which-is-fastest-read-fread-ifstream-or-mmap/
 
 #define DEBUG 1
 
@@ -78,7 +78,7 @@ void readFile(row *rows) {
 
 void writeOutput(const row *rows, const long int totalRows) {
     FILE *write_ptr;
-    write_ptr = fopen("Resources/output", "wb");  // w for write, b for binary
+    write_ptr = fopen("output", "wb");  // w for write, b for binary
     for (int i = 0; i < totalRows; i++) {
         fwrite(&rows[i], sizeof(struct row), 1, write_ptr);
     }
