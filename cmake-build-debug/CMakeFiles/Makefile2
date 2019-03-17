@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/elias/Desktop/Sigmod2019/cmake-build-debug
 CMakeFiles/SortingAlgorithm.dir/all:
 	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/depend
 	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target SortingAlgorithm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target SortingAlgorithm"
 .PHONY : CMakeFiles/SortingAlgorithm.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/SortingAlgorithm.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SortingAlgorithm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SortingAlgorithm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/SortingAlgorithm.dir/rule

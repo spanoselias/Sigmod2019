@@ -7,8 +7,11 @@
 
 #include <cstdlib>
 
-struct row {
+typedef struct row {
     unsigned char key[10] ;
     unsigned char data[90];
-};
+}row;
+
+void readFile(row *rows);
+
 #endif //SORTINGALGORITHM_STRUCTURES_H

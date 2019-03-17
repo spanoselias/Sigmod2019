@@ -6,7 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/elias/Desktop/Sigmod2019/Utils/timer.c
+/home/elias/Desktop/Sigmod2019/DataStructures/structures.h
+cstdlib
+-
+
+/home/elias/Desktop/Sigmod2019/Utils/Files.cpp
+bits/types/FILE.h
+-
+stdio.h
+-
+cstring
+-
+../DataStructures/structures.h
+/home/elias/Desktop/Sigmod2019/DataStructures/structures.h
+
+/home/elias/Desktop/Sigmod2019/Utils/Timer.c
 bits/types/clock_t.h
 -
 time.h
@@ -21,16 +35,14 @@ string.h
 /home/elias/Desktop/Sigmod2019/string.h
 stdio.h
 /home/elias/Desktop/Sigmod2019/stdio.h
-Utils/timer.c
-/home/elias/Desktop/Sigmod2019/Utils/timer.c
-structures.h
-/home/elias/Desktop/Sigmod2019/structures.h
+Utils/Timer.c
+/home/elias/Desktop/Sigmod2019/Utils/Timer.c
+Utils/Files.cpp
+/home/elias/Desktop/Sigmod2019/Utils/Files.cpp
+DataStructures/structures.h
+/home/elias/Desktop/Sigmod2019/DataStructures/structures.h
 sys/stat.h
 -
-cstdlib
--
-
-/home/elias/Desktop/Sigmod2019/structures.h
 cstdlib
 -
 

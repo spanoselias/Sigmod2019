@@ -4,7 +4,8 @@
 #include <ctime>
 #include "string.h"
 #include "stdio.h"
-#include "Utils/timer.c"
+#include "Utils/Timer.c"
+#include "Utils/Files.cpp"
 #include "DataStructures/structures.h"
 #include <sys/stat.h>
 #include <cstdlib>
@@ -61,7 +62,7 @@ void readFile(row *rows) {
     row buf;
 
     file = fopen("input", "rb");
-    if (file == nullptr) {
+    if (file == NULL) {
         fprintf(stderr, "\nError opening file\n");
     }
 
@@ -73,6 +74,7 @@ void readFile(row *rows) {
 
     fclose(file);
 }
+
 
 void writeOutput(const row *rows, const long int totalRows) {
     FILE *write_ptr;

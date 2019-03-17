@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/SortingAlgorithm.dir/main.cpp.o CMakeFiles/SortingAlgorithm.dir/Utils/timer.c.o  -o SortingAlgorithm 
+/usr/bin/c++  -g   CMakeFiles/SortingAlgorithm.dir/Utils/Files.cpp.o CMakeFiles/SortingAlgorithm.dir/main.cpp.o CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o  -o SortingAlgorithm 

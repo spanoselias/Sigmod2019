@@ -3,4 +3,4 @@ project(SortingAlgorithm)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(SortingAlgorithm main.cpp Utils/timer.c DataStructures/structures.h)
+add_executable(SortingAlgorithm DataStructures/structures.h Utils/Files.cpp main.cpp Utils/Timer.c )
