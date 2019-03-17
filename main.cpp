@@ -8,6 +8,10 @@
 #include "DataStructures/structures.h"
 #include <sys/stat.h>
 #include <cstdlib>
+#include <cstdint>
+#include <fcntl.h>
+#include <sys/mman.h>
+
 
 // https://stackoverflow.com/questions/17598572/read-write-to-binary-files-in-c
 // set stack size unlimited ( ulimit -s hard )
@@ -15,6 +19,9 @@
 // https://lemire.me/blog/2012/06/26/which-is-fastest-read-fread-ifstream-or-mmap/
 
 #define DEBUG 1
+#define ROWSIZE 100
+#define handle_error(msg) \
+  do { perror(msg); exit(EXIT_FAILURE); } while (0)
 
 // Global Variables
 long int total_rows;
@@ -28,7 +35,7 @@ long int calTotalNoOfRows(const char *fileName) {
     /*get the size using stat()*/
     stat(fileName, &st);
 
-    return (st.st_size) / 100;
+    return (st.st_size) / ROWSIZE;
 }
 
 
@@ -75,6 +82,27 @@ void readFile(row *rows) {
     fclose(file);
 }
 
+void bulkReadOfFile(row *rows, const unsigned int totalRows) {
+    const unsigned char *memblock;
+    int fd;
+    struct stat sb;
+
+    fd = open("input", O_RDONLY);
+    fstat(fd, &sb);
+    printf("Size: %lu\n", (uint64_t)sb.st_size);
+
+    memblock = (unsigned const char*)(mmap(NULL, sb.st_size, PROT_WRITE, MAP_PRIVATE, fd, 0));
+    if (memblock == (unsigned const char*)MAP_FAILED) handle_error("mmap");
+
+    int idx = 0;
+    for(int i = 0; i< totalRows; i += ROWSIZE){
+        memcpy(&rows[idx], &memblock + i, sizeof(struct row));
+        idx +=1;
+    }
+
+    printf("%s", "read the file.");
+    
+}
 
 void writeOutput(const row *rows, const long int totalRows) {
     FILE *write_ptr;
@@ -91,8 +119,11 @@ int main() {
 
     row rows[total_rows];
 
+
     clock_t t0 = startTimer();
-    readFile(rows);
+    bulkReadOfFile(rows, total_rows);
+
+//    readFile(rows);
     printExecutionTime(t0, "Reading the file");
 
     size_t structs_len = sizeof(rows) / sizeof(struct row);
