@@ -6,7 +6,6 @@
 #include <time.h>
 #include <stdio.h>
 
-
 #ifndef UTILS_TIMER_C
 #define UTILS_TIMER_C
 
