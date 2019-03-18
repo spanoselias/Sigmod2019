@@ -5,7 +5,7 @@
 #include "string.h"
 #include "stdio.h"
 #include "../Utils/Timer.c"
-#include "../DataStructures/structures.h"
+#include "../DataStructures/Structures.h"
 #include <sys/stat.h>
 #include <cstdlib>
 #include <cstdint>

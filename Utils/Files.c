@@ -10,7 +10,7 @@
 #include <sys/mman.h>
 #include <memory.h>
 #include <stdlib.h>
-#include "../DataStructures/structures.h"
+#include "../DataStructures/Structures.h"
 
 
 #ifndef UTILS_STRUCTURES_H
@@ -21,7 +21,7 @@
 
 #define ROWSIZE 100
 
-long int calTotalNoOfRows(const char *fileName) {
+inline long int calTotalNoOfRows(const char *fileName) {
     struct stat st;
 
     /*get the size using stat()*/
@@ -38,7 +38,7 @@ void bulkfRead(row *rows, const unsigned int totalRows) {
 
     fd = open("input", O_RDONLY);
     fstat(fd, &sb);
-    printf("Size: %lu\n", (uint64_t) sb.st_size);
+//    printf("Size: %lu\n", (uint64_t) sb.st_size);
 
     memblock = (unsigned const char *) (mmap(NULL, sb.st_size, PROT_WRITE, MAP_PRIVATE, fd, 0));
     if (memblock == (unsigned const char *) MAP_FAILED) handle_error("mmap");
@@ -48,7 +48,6 @@ void bulkfRead(row *rows, const unsigned int totalRows) {
         memcpy(&rows[idx], &memblock + i, sizeof(struct row));
         idx += 1;
     }
-
 }
 
 void writeOutput(const row *rows, const long int totalRows) {

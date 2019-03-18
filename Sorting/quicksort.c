@@ -4,7 +4,7 @@
 //#include "smartomp.h"
 #include "stdlib.h"
 #include "stdio.h"
-#include "../DataStructures/structures.h"
+#include "../DataStructures/Structures.h"
 #include "../Utils/Files.c"
 #include "../Utils/Timer.c"
 

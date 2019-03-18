@@ -11,7 +11,7 @@
 #include <sys/mman.h>
 #include "get_time.c"
 #include "../Utils/Timer.c"
-#include "../DataStructures/structures.h"
+#include "../DataStructures/Structures.h"
 
 // Arrays size <= SMALL switches to insertion sort
 #define SMALL    30
