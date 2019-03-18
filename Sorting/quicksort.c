@@ -5,7 +5,7 @@
 #include "stdlib.h"
 #include "stdio.h"
 #include "../DataStructures/structures.h"
-#include "../Utils/files.c"
+#include "../Utils/Files.c"
 #include "../Utils/Timer.c"
 
 int max_threads = 4;
