@@ -2,7 +2,6 @@
 // Created by elias on 3/18/19.
 //
 
-
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <stdio.h>
@@ -56,6 +55,15 @@ void writeOutput(const row *rows, const long int totalRows) {
     for (int i = 0; i < totalRows; i++) {
         fwrite(&rows[i], sizeof(struct row), 1, write_ptr);
     }
+}
+
+void bulkWriteOutput(const row *rows, const long int totalRows) {
+
+    FILE *write_ptr;
+    write_ptr = fopen("output2", "wb");  // w for write, b for binary
+    fwrite(rows, sizeof(struct row), totalRows, write_ptr);
+
+    fclose(write_ptr);
 }
 
 #endif //SORTINGALGORITHM_STRUCTURES_H

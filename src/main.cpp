@@ -5,6 +5,7 @@
 #include "string.h"
 #include "stdio.h"
 #include "../Utils/Timer.c"
+#include "../Utils/Files.c"
 #include "../DataStructures/Structures.h"
 #include <sys/stat.h>
 #include <cstdlib>
@@ -12,7 +13,7 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <algorithm>
-
+#include <unistd.h>
 
 
 // https://stackoverflow.com/questions/17598572/read-write-to-binary-files-in-c
@@ -30,85 +31,15 @@
 // Global Variables
 long int total_rows;
 
-/***********************************************************************************/
-/*                                 FUNCTIONS                                       */
-/***********************************************************************************/
-long int calTotalNoOfRows(const char *fileName) {
-    struct stat st;
-
-    /*get the size using stat()*/
-    stat(fileName, &st);
-
-    return (st.st_size) / ROWSIZE;
-}
-
-
-void printExecutionTime(clock_t &t);
 
 
 /***********************************************************************************/
 /*                           Sorting Comparator                                    */
 /***********************************************************************************/
-int rowCmp(const void *row1,
-           const void *row2) {
+inline int rowCmp(const void *row1,
+                  const void *row2) {
 
-    row *newRow1 = (struct row *) row1;
-    row *newRow2 = (struct row *) row2;
-
-    int result = memcmp(newRow1->key, newRow2->key, 10);
-
-    return result;
-}
-
-/***********************************************************************************/
-/*                          Print Execution Time                                   */
-/***********************************************************************************/
-
-
-void readFile(row *rows) {
-    FILE *file;
-    row buf;
-
-    file = fopen("input", "rb");
-    if (file == NULL) {
-        fprintf(stderr, "\nError opening file\n");
-    }
-
-    long idx = 0;
-    while (fread(&buf, sizeof(struct row), 1, file)) {
-        memcpy(&rows[idx], &buf, sizeof(struct row));
-        ++idx;
-    }
-
-    fclose(file);
-}
-
-void bulkfRead(row *rows, const unsigned int totalRows) {
-    const unsigned char *memblock;
-    int fd;
-    struct stat sb;
-
-    fd = open("input", O_RDONLY);
-    fstat(fd, &sb);
-    printf("Size: %lu\n", (uint64_t)sb.st_size);
-
-    memblock = (unsigned const char*)(mmap(NULL, sb.st_size, PROT_WRITE, MAP_PRIVATE, fd, 0));
-    if (memblock == (unsigned const char*)MAP_FAILED) handle_error("mmap");
-
-    int idx = 0;
-    for(int i = 0; i< totalRows; i += ROWSIZE){
-        memcpy(&rows[idx], &memblock + i, sizeof(struct row));
-        idx +=1;
-    }
-
-}
-
-void writeOutput(const row *rows, const long int totalRows) {
-    FILE *write_ptr;
-    write_ptr = fopen("output", "wb");  // w for write, b for binary
-    for (int i = 0; i < totalRows; i++) {
-        fwrite(&rows[i], sizeof(struct row), 1, write_ptr);
-    }
+    return memcmp(((struct row *) row1)->key, ((struct row *) row2)->key, 10);
 }
 
 bool rowCmp2(row row1,
@@ -136,13 +67,17 @@ int main() {
     clock_t t1 = startTimer();
 
     // Sorting Algorithm. Need to be implemented a parallel sorting algorithm
-     qsort(rows, structs_len, sizeof(struct row), rowCmp);
-//    std::sort(rows, rows + total_rows, rows[0]);
+    qsort(rows, structs_len, sizeof(struct row), rowCmp);
+//  std::sort(rows, rows + total_rows, rows[0]);
     printExecutionTime(t1, "Sorting the file");
 
-    clock_t t2 = startTimer();
-    writeOutput(rows, total_rows);
-    printExecutionTime(t2, "Writing the file");
+//    clock_t t2 = startTimer();
+//    writeOutput(rows, total_rows);
+//    printExecutionTime(t2, "Writing the file");
+
+    clock_t t3 = startTimer();
+    bulkWriteOutput(rows, total_rows);
+    printExecutionTime(t3, "Writing the file");
 
     return 0;
 }
