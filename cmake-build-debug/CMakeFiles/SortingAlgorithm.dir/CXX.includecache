@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/elias/Desktop/Sigmod2019/DataStructures/structures.h
+/home/elias/Desktop/Sigmod2019/DataStructures/Structures.h
 
 /home/elias/Desktop/Sigmod2019/Utils/Timer.c
 bits/types/clock_t.h
@@ -25,8 +25,8 @@ stdio.h
 /home/elias/Desktop/Sigmod2019/src/stdio.h
 ../Utils/Timer.c
 /home/elias/Desktop/Sigmod2019/Utils/Timer.c
-../DataStructures/structures.h
-/home/elias/Desktop/Sigmod2019/DataStructures/structures.h
+../DataStructures/Structures.h
+/home/elias/Desktop/Sigmod2019/DataStructures/Structures.h
 sys/stat.h
 -
 cstdlib
@@ -38,5 +38,7 @@ fcntl.h
 sys/mman.h
 -
 algorithm
+-
+unistd.h
 -
 

@@ -1,0 +1,1 @@
+ gcc main.cpp -o main  ./sort ../src/input output

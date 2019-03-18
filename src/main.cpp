@@ -71,12 +71,12 @@ int main() {
 //  std::sort(rows, rows + total_rows, rows[0]);
     printExecutionTime(t1, "Sorting the file");
 
-//    clock_t t2 = startTimer();
-//    writeOutput(rows, total_rows);
-//    printExecutionTime(t2, "Writing the file");
+    clock_t t2 = startTimer();
+    bulkWriteOutput(rows, total_rows);
+    printExecutionTime(t2, "Writing the file");
 
     clock_t t3 = startTimer();
-    bulkWriteOutput(rows, total_rows);
+    fastBulkWriteOutput(rows, total_rows);
     printExecutionTime(t3, "Writing the file");
 
     return 0;
