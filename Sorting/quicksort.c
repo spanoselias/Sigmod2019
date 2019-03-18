@@ -6,11 +6,12 @@
 #include "stdio.h"
 #include "../DataStructures/structures.h"
 #include "../Utils/files.c"
+#include "../Utils/Timer.c"
 
-int max_threads;
+int max_threads = 4;
 
 /* How many workers can be working at same time */
-int num_of_workers = 0;
+int num_of_workers = 1;
 /* How many active workers currently */
 int num_of_active_workers = 0;
 
@@ -109,12 +110,20 @@ void parallel_qsort(row data[], int n) {
 int long total_rows;
 int main() {
 
+
     // Retrieve total number of rows.
     total_rows = calTotalNoOfRows("input");
 
     row rows[total_rows];
 
+    clock_t t0 = startTimer();
+
     bulkfRead(rows, total_rows);
+    printExecutionTime(t0, "Reading the file");
+
+    parallel_qsort(rows, total_rows);
+
+    writeOutput(rows, total_rows);
 
     return 0;
 }

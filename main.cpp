@@ -63,12 +63,7 @@ int rowCmp(const void *row1,
 /***********************************************************************************/
 /*                          Print Execution Time                                   */
 /***********************************************************************************/
-void printExecutionTime(clock_t &t, const char *msg) {
-    t = clock() - t;
-    double time_taken = (((double) t) / CLOCKS_PER_SEC); // in seconds
 
-    printf("%s took: [%f] seconds to execute. \n", msg, time_taken);
-}
 
 void readFile(row *rows) {
     FILE *file;

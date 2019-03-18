@@ -44,7 +44,6 @@ long int calTotalNoOfRows(const char *fileName) {
     return (st.st_size) / ROWSIZE;
 }
 
-
 void printExecutionTime(const clock_t t, const char *msg) {
     clock_t t1 = clock() - t;
     double time_taken = (((double) t1) / CLOCKS_PER_SEC); // in seconds

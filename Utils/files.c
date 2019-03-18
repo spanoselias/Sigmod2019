@@ -51,4 +51,12 @@ void bulkfRead(row *rows, const unsigned int totalRows) {
 
 }
 
+void writeOutput(const row *rows, const long int totalRows) {
+    FILE *write_ptr;
+    write_ptr = fopen("output", "wb");  // w for write, b for binary
+    for (int i = 0; i < totalRows; i++) {
+        fwrite(&rows[i], sizeof(struct row), 1, write_ptr);
+    }
+}
+
 #endif //SORTINGALGORITHM_STRUCTURES_H
