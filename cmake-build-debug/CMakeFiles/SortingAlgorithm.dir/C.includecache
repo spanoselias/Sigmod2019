@@ -8,15 +8,7 @@
 
 /home/elias/Desktop/Sigmod2019/DataStructures/structures.h
 
-/home/elias/Desktop/Sigmod2019/Utils/Timer.c
-bits/types/clock_t.h
--
-time.h
--
-stdio.h
--
-
-/home/elias/Desktop/Sigmod2019/Utils/files.c
+/home/elias/Desktop/Sigmod2019/Utils/Files.c
 fcntl.h
 -
 sys/stat.h
@@ -33,4 +25,12 @@ stdlib.h
 -
 ../DataStructures/structures.h
 /home/elias/Desktop/Sigmod2019/DataStructures/structures.h
+
+/home/elias/Desktop/Sigmod2019/Utils/Timer.c
+bits/types/clock_t.h
+-
+time.h
+-
+stdio.h
+-
 

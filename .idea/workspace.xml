@@ -14,8 +14,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c8554b3-0ca4-47a2-8e67-07dfdd47740d" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/Utils/Timer.c" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Timer.c" afterDir="false" />
+    <list default="true" id="7c8554b3-0ca4-47a2-8e67-07dfdd47740d" name="Default Changelist" comment="1) Check tools.">
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sorting/quicksort.c" beforeDir="false" afterPath="$PROJECT_DIR$/Sorting/quicksort.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/files.c" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Files.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/SortingAlgorithm.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SortingAlgorithm.cbp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/Sorting/quicksort.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="708">
-              <caret line="70" column="12" lean-forward="true" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
+              <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
                 <element signature="e#81#100#0" expanded="true" />
@@ -53,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Timer.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Timer.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utils/Timer.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="484">
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
               <folding>
                 <element signature="e#39#70#0" expanded="true" />
               </folding>
@@ -65,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="files.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Utils/files.c">
+      <file leaf-file-name="Files.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Utils/Files.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+            <state relative-caret-position="597">
+              <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
               <folding>
                 <element signature="e#40#58#0" expanded="true" />
               </folding>
@@ -80,8 +88,8 @@
       <file leaf-file-name="nomp_mergesort.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sorting/nomp_mergesort.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+            <state relative-caret-position="541">
+              <caret line="69" column="1" selection-start-line="53" selection-end-line="69" selection-end-column="1" />
               <folding>
                 <element signature="e#39#58#0" expanded="true" />
               </folding>
@@ -247,7 +255,7 @@
   </component>
   <component name="RunManager" selected="Application.SortingAlgorithm">
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SortingAlgorithm" RUN_TARGET_NAME="SortingAlgorithm" EXPLICIT_BUILD_TARGET_NAME="all" />
-    <configuration name="SortingAlgorithm" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SortingAlgorithm" TARGET_NAME="SortingAlgorithm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SortingAlgorithm" RUN_TARGET_NAME="SortingAlgorithm" />
+    <configuration name="SortingAlgorithm" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$/src" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SortingAlgorithm" TARGET_NAME="SortingAlgorithm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SortingAlgorithm" RUN_TARGET_NAME="SortingAlgorithm" />
     <list>
       <item itemvalue="Application.Build All" />
       <item itemvalue="Application.SortingAlgorithm" />
@@ -275,7 +283,7 @@
       <workItem from="1552834976129" duration="5811000" />
       <workItem from="1552846355825" duration="9649000" />
       <workItem from="1552908909801" duration="1567000" />
-      <workItem from="1552931219404" duration="1733000" />
+      <workItem from="1552931219404" duration="2002000" />
     </task>
     <task id="LOCAL-00001" summary="1) Rename variables.">
       <created>1552668511775</created>
@@ -326,17 +334,38 @@
       <option name="project" value="LOCAL" />
       <updated>1552933173114</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1) Refactor code.">
+      <created>1552933274947</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1552933274947</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1) Check tools.">
+      <created>1552933322471</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1552933322471</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1) Renames files.">
+      <created>1552933531119</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1552933531119</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41708000" />
+    <option name="totallyTimeSpent" value="41977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1175" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15245901" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16393442" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.26679462" />
       <window_info anchor="bottom" id="CMake" order="7" weight="0.3286334" />
@@ -373,7 +402,10 @@
     <MESSAGE value="Refactor the code." />
     <MESSAGE value="1) Refactor files" />
     <MESSAGE value="Default Changelist" />
-    <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
+    <MESSAGE value="1) Refactor code." />
+    <MESSAGE value="1) Check tools." />
+    <MESSAGE value="1) Renames files." />
+    <option name="LAST_COMMIT_MESSAGE" value="1) Renames files." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -812,30 +844,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/files.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
-          <folding>
-            <element signature="e#40#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sorting/nomp_mergesort.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-          <folding>
-            <element signature="e#39#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sorting/quicksort.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="708">
-          <caret line="70" column="12" lean-forward="true" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
+          <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
             <element signature="e#81#100#0" expanded="true" />
@@ -845,10 +857,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils/Timer.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="484">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding>
             <element signature="e#39#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sorting/nomp_mergesort.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="69" column="1" selection-start-line="53" selection-end-line="69" selection-end-column="1" />
+          <folding>
+            <element signature="e#39#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/Files.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#58#0" expanded="true" />
           </folding>
         </state>
       </provider>

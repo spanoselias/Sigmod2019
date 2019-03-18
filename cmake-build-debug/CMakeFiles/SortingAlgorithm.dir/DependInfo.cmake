@@ -5,8 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/elias/Desktop/Sigmod2019/Utils/Files.c" "/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o"
   "/home/elias/Desktop/Sigmod2019/Utils/Timer.c" "/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o"
-  "/home/elias/Desktop/Sigmod2019/Utils/files.c" "/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/Utils/files.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -14,7 +14,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/elias/Desktop/Sigmod2019/main.cpp" "/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/main.cpp.o"
+  "/home/elias/Desktop/Sigmod2019/src/main.cpp" "/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

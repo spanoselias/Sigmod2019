@@ -123,6 +123,33 @@ SortingAlgorithm/fast:
 	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/build
 .PHONY : SortingAlgorithm/fast
 
+Utils/Files.o: Utils/Files.c.o
+
+.PHONY : Utils/Files.o
+
+# target to build an object file
+Utils/Files.c.o:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o
+.PHONY : Utils/Files.c.o
+
+Utils/Files.i: Utils/Files.c.i
+
+.PHONY : Utils/Files.i
+
+# target to preprocess a source file
+Utils/Files.c.i:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.i
+.PHONY : Utils/Files.c.i
+
+Utils/Files.s: Utils/Files.c.s
+
+.PHONY : Utils/Files.s
+
+# target to generate assembly for a file
+Utils/Files.c.s:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.s
+.PHONY : Utils/Files.c.s
+
 Utils/Timer.o: Utils/Timer.c.o
 
 .PHONY : Utils/Timer.o
@@ -150,59 +177,32 @@ Utils/Timer.c.s:
 	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.s
 .PHONY : Utils/Timer.c.s
 
-Utils/files.o: Utils/files.c.o
+src/main.o: src/main.cpp.o
 
-.PHONY : Utils/files.o
-
-# target to build an object file
-Utils/files.c.o:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/files.c.o
-.PHONY : Utils/files.c.o
-
-Utils/files.i: Utils/files.c.i
-
-.PHONY : Utils/files.i
-
-# target to preprocess a source file
-Utils/files.c.i:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/files.c.i
-.PHONY : Utils/files.c.i
-
-Utils/files.s: Utils/files.c.s
-
-.PHONY : Utils/files.s
-
-# target to generate assembly for a file
-Utils/files.c.s:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/files.c.s
-.PHONY : Utils/files.c.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
+.PHONY : src/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-main.i: main.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : main.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-main.s: main.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : main.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -213,15 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... SortingAlgorithm"
+	@echo "... Utils/Files.o"
+	@echo "... Utils/Files.i"
+	@echo "... Utils/Files.s"
 	@echo "... Utils/Timer.o"
 	@echo "... Utils/Timer.i"
 	@echo "... Utils/Timer.s"
-	@echo "... Utils/files.o"
-	@echo "... Utils/files.i"
-	@echo "... Utils/files.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

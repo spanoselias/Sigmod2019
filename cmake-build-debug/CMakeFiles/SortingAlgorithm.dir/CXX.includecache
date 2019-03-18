@@ -16,16 +16,16 @@ time.h
 stdio.h
 -
 
-/home/elias/Desktop/Sigmod2019/main.cpp
+/home/elias/Desktop/Sigmod2019/src/main.cpp
 ctime
 -
 string.h
-/home/elias/Desktop/Sigmod2019/string.h
+/home/elias/Desktop/Sigmod2019/src/string.h
 stdio.h
-/home/elias/Desktop/Sigmod2019/stdio.h
-Utils/Timer.c
+/home/elias/Desktop/Sigmod2019/src/stdio.h
+../Utils/Timer.c
 /home/elias/Desktop/Sigmod2019/Utils/Timer.c
-DataStructures/structures.h
+../DataStructures/structures.h
 /home/elias/Desktop/Sigmod2019/DataStructures/structures.h
 sys/stat.h
 -

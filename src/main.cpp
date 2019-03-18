@@ -4,8 +4,8 @@
 #include <ctime>
 #include "string.h"
 #include "stdio.h"
-#include "Utils/Timer.c"
-#include "DataStructures/structures.h"
+#include "../Utils/Timer.c"
+#include "../DataStructures/structures.h"
 #include <sys/stat.h>
 #include <cstdlib>
 #include <cstdint>
