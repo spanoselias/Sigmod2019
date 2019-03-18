@@ -123,33 +123,6 @@ SortingAlgorithm/fast:
 	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/build
 .PHONY : SortingAlgorithm/fast
 
-Utils/Files.o: Utils/Files.cpp.o
-
-.PHONY : Utils/Files.o
-
-# target to build an object file
-Utils/Files.cpp.o:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/Files.cpp.o
-.PHONY : Utils/Files.cpp.o
-
-Utils/Files.i: Utils/Files.cpp.i
-
-.PHONY : Utils/Files.i
-
-# target to preprocess a source file
-Utils/Files.cpp.i:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/Files.cpp.i
-.PHONY : Utils/Files.cpp.i
-
-Utils/Files.s: Utils/Files.cpp.s
-
-.PHONY : Utils/Files.s
-
-# target to generate assembly for a file
-Utils/Files.cpp.s:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/Files.cpp.s
-.PHONY : Utils/Files.cpp.s
-
 Utils/Timer.o: Utils/Timer.c.o
 
 .PHONY : Utils/Timer.o
@@ -176,6 +149,33 @@ Utils/Timer.s: Utils/Timer.c.s
 Utils/Timer.c.s:
 	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.s
 .PHONY : Utils/Timer.c.s
+
+Utils/files.o: Utils/files.c.o
+
+.PHONY : Utils/files.o
+
+# target to build an object file
+Utils/files.c.o:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/files.c.o
+.PHONY : Utils/files.c.o
+
+Utils/files.i: Utils/files.c.i
+
+.PHONY : Utils/files.i
+
+# target to preprocess a source file
+Utils/files.c.i:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/files.c.i
+.PHONY : Utils/files.c.i
+
+Utils/files.s: Utils/files.c.s
+
+.PHONY : Utils/files.s
+
+# target to generate assembly for a file
+Utils/files.c.s:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/files.c.s
+.PHONY : Utils/files.c.s
 
 main.o: main.cpp.o
 
@@ -213,12 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... SortingAlgorithm"
-	@echo "... Utils/Files.o"
-	@echo "... Utils/Files.i"
-	@echo "... Utils/Files.s"
 	@echo "... Utils/Timer.o"
 	@echo "... Utils/Timer.i"
 	@echo "... Utils/Timer.s"
+	@echo "... Utils/files.o"
+	@echo "... Utils/files.i"
+	@echo "... Utils/files.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

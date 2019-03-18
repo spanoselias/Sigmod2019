@@ -87,10 +87,10 @@
 		<Unit filename="/home/elias/Desktop/Sigmod2019/DataStructures/structures.h">
 			<Option target="SortingAlgorithm"/>
 		</Unit>
-		<Unit filename="/home/elias/Desktop/Sigmod2019/Utils/Files.cpp">
+		<Unit filename="/home/elias/Desktop/Sigmod2019/Utils/Timer.c">
 			<Option target="SortingAlgorithm"/>
 		</Unit>
-		<Unit filename="/home/elias/Desktop/Sigmod2019/Utils/Timer.c">
+		<Unit filename="/home/elias/Desktop/Sigmod2019/Utils/files.c">
 			<Option target="SortingAlgorithm"/>
 		</Unit>
 		<Unit filename="/home/elias/Desktop/Sigmod2019/main.cpp">
