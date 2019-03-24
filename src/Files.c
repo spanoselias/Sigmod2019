@@ -129,17 +129,4 @@ void bulkWriteOutput(const row *rows, const long int totalRows, char *ouput) {
     fclose(write_ptr);
 }
 
-//void fastBulkWriteOutput(const row *rows, const long int totalRows, char * filename) {
-//    int fd, bytes;
-//
-//    if ((fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600)) == -1) {
-//        perror("open");
-//        exit(1);
-//    }
-//
-//    bytes = write(fd, rows, sizeof(row) * totalRows); /* Data out */
-//    printf("%d bytes were written\n", bytes);
-//    close(fd);
-//}
-
 #endif //SORTINGALGORITHM_STRUCTURES_H
