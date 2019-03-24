@@ -4,9 +4,9 @@
 #include <ctime>
 #include "string.h"
 #include "stdio.h"
-#include "../Utils/Timer.c"
-#include "../Utils/Files.c"
-#include "../DataStructures/Structures.h"
+#include "Timer.c"
+#include "Files.c"
+#include "Structures.h"
 #include <sys/stat.h>
 #include <cstdlib>
 #include <cstdint>
@@ -15,13 +15,6 @@
 #include <algorithm>
 #include <unistd.h>
 
-
-// https://stackoverflow.com/questions/17598572/read-write-to-binary-files-in-c
-// set stack size unlimited ( ulimit -s hard )
-// http://icps.u-strasbg.fr/~bastoul/local_copies/lee.html
-// https://lemire.me/blog/2012/06/26/which-is-fastest-read-fread-ifstream-or-mmap/
-// https://github.com/gary-funck/parallel-merge-sort
-
 #define DEBUG 1
 #define ROWSIZE 100
 #define BUFFER_SIZE 100
@@ -29,8 +22,7 @@
   do { perror(msg); exit(EXIT_FAILURE); } while (0)
 
 // Global Variables
-long int total_rows;
-
+unsigned int total_rows;
 
 
 /***********************************************************************************/
@@ -39,7 +31,11 @@ long int total_rows;
 inline int rowCmp(const void *row1,
                   const void *row2) {
 
-    return memcmp(((struct row *) row1)->key, ((struct row *) row2)->key, 10);
+    row *newRow1 = ((row *) row1);
+    row *newRow2 = ((row *) row2);
+
+
+    return memcmp(newRow1->key, newRow2->key, 10);
 }
 
 bool rowCmp2(row row1,
@@ -49,35 +45,34 @@ bool rowCmp2(row row1,
 
 }
 
-int main() {
+int main(int argc, char *argv[]) {
+
+    if (argc != 3) {
+        printf("[in-file] [outfile]\n");
+        exit(1);
+    }
 
     // Retrieve total number of rows.
-    total_rows = calTotalNoOfRows("input");
+    total_rows = calTotalNoOfRows(argv[1]);
 
-    row rows[total_rows];
+    row *rows = (row *) (malloc(sizeof(struct row) * total_rows));
 
     clock_t t0 = startTimer();
-    bulkfRead(rows, total_rows);
+    readNFile(rows, total_rows, argv[1]);
 
 //  readFile(rows);
     printExecutionTime(t0, "Reading the file");
 
-    size_t structs_len = sizeof(rows) / sizeof(struct row);
-
     clock_t t1 = startTimer();
 
-    // Sorting Algorithm. Need to be implemented a parallel sorting algorithm
-    qsort(rows, structs_len, sizeof(struct row), rowCmp);
-//  std::sort(rows, rows + total_rows, rows[0]);
+    qsort(rows, total_rows, sizeof(row), rowCmp);
+
+    //  std::sort(rows, rows + total_rows, &rows[0]);
     printExecutionTime(t1, "Sorting the file");
 
     clock_t t2 = startTimer();
-    bulkWriteOutput(rows, total_rows);
+    writeOutput(rows, total_rows, argv[2]);
     printExecutionTime(t2, "Writing the file");
-
-    clock_t t3 = startTimer();
-    fastBulkWriteOutput(rows, total_rows);
-    printExecutionTime(t3, "Writing the file");
 
     return 0;
 }

@@ -7,12 +7,12 @@
 
 
 typedef struct row {
-    unsigned char key[10] ;
-    unsigned char data[90];
+    unsigned char *key;
+    unsigned char *data;
 
 //    bool operator()(const row &lhs, const row &rhs) const { return memcmp(lhs.key, rhs.key, 10) < 1; }
 
-}row;
+}row  ;
 
 
 #endif //SORTINGALGORITHM_STRUCTURES_H

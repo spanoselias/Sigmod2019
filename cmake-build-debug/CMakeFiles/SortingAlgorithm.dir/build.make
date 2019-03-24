@@ -57,93 +57,41 @@ include CMakeFiles/SortingAlgorithm.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SortingAlgorithm.dir/flags.make
 
-CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o: CMakeFiles/SortingAlgorithm.dir/flags.make
-CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o -c /home/elias/Desktop/Sigmod2019/src/main.cpp
+CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o: CMakeFiles/SortingAlgorithm.dir/flags.make
+CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o: ../src/sort.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o -c /home/elias/Desktop/Sigmod2019/src/sort.cpp
 
-CMakeFiles/SortingAlgorithm.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SortingAlgorithm.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/elias/Desktop/Sigmod2019/src/main.cpp > CMakeFiles/SortingAlgorithm.dir/src/main.cpp.i
+CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/elias/Desktop/Sigmod2019/src/sort.cpp > CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.i
 
-CMakeFiles/SortingAlgorithm.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SortingAlgorithm.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/elias/Desktop/Sigmod2019/src/main.cpp -o CMakeFiles/SortingAlgorithm.dir/src/main.cpp.s
+CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/elias/Desktop/Sigmod2019/src/sort.cpp -o CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.s
 
-CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o.requires:
+CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o.requires:
 
-.PHONY : CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o.requires
+.PHONY : CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o.requires
 
-CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o.provides: CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o.provides.build
-.PHONY : CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o.provides
+CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o.provides: CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o.provides.build
+.PHONY : CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o.provides
 
-CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o.provides.build: CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o
-
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o: CMakeFiles/SortingAlgorithm.dir/flags.make
-CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o: ../Utils/Timer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o   -c /home/elias/Desktop/Sigmod2019/Utils/Timer.c
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/elias/Desktop/Sigmod2019/Utils/Timer.c > CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.i
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/elias/Desktop/Sigmod2019/Utils/Timer.c -o CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.s
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o.requires:
-
-.PHONY : CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o.requires
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o.provides: CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o.requires
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o.provides.build
-.PHONY : CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o.provides
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o.provides.build: CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o
-
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o: CMakeFiles/SortingAlgorithm.dir/flags.make
-CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o: ../Utils/Files.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o   -c /home/elias/Desktop/Sigmod2019/Utils/Files.c
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/elias/Desktop/Sigmod2019/Utils/Files.c > CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.i
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/elias/Desktop/Sigmod2019/Utils/Files.c -o CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.s
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o.requires:
-
-.PHONY : CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o.requires
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o.provides: CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o.requires
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o.provides.build
-.PHONY : CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o.provides
-
-CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o.provides.build: CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o
+CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o.provides.build: CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o
 
 
 # Object files for target SortingAlgorithm
 SortingAlgorithm_OBJECTS = \
-"CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o" \
-"CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o" \
-"CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o"
+"CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o"
 
 # External object files for target SortingAlgorithm
 SortingAlgorithm_EXTERNAL_OBJECTS =
 
-SortingAlgorithm: CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o
-SortingAlgorithm: CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o
-SortingAlgorithm: CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o
+SortingAlgorithm: CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o
 SortingAlgorithm: CMakeFiles/SortingAlgorithm.dir/build.make
 SortingAlgorithm: CMakeFiles/SortingAlgorithm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable SortingAlgorithm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable SortingAlgorithm"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SortingAlgorithm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -151,9 +99,7 @@ CMakeFiles/SortingAlgorithm.dir/build: SortingAlgorithm
 
 .PHONY : CMakeFiles/SortingAlgorithm.dir/build
 
-CMakeFiles/SortingAlgorithm.dir/requires: CMakeFiles/SortingAlgorithm.dir/src/main.cpp.o.requires
-CMakeFiles/SortingAlgorithm.dir/requires: CMakeFiles/SortingAlgorithm.dir/Utils/Timer.c.o.requires
-CMakeFiles/SortingAlgorithm.dir/requires: CMakeFiles/SortingAlgorithm.dir/Utils/Files.c.o.requires
+CMakeFiles/SortingAlgorithm.dir/requires: CMakeFiles/SortingAlgorithm.dir/src/sort.cpp.o.requires
 
 .PHONY : CMakeFiles/SortingAlgorithm.dir/requires
 

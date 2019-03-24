@@ -84,16 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/elias/Desktop/Sigmod2019/DataStructures/Structures.h">
-			<Option target="SortingAlgorithm"/>
-		</Unit>
-		<Unit filename="/home/elias/Desktop/Sigmod2019/Utils/Files.c">
-			<Option target="SortingAlgorithm"/>
-		</Unit>
-		<Unit filename="/home/elias/Desktop/Sigmod2019/Utils/Timer.c">
-			<Option target="SortingAlgorithm"/>
-		</Unit>
-		<Unit filename="/home/elias/Desktop/Sigmod2019/src/main.cpp">
+		<Unit filename="/home/elias/Desktop/Sigmod2019/src/sort.cpp">
 			<Option target="SortingAlgorithm"/>
 		</Unit>
 		<Unit filename="/home/elias/Desktop/Sigmod2019/CMakeLists.txt">

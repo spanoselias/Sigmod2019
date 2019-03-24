@@ -6,9 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/home/elias/Desktop/Sigmod2019/DataStructures/Structures.h
+/home/elias/Desktop/Sigmod2019/src/Files.c
+fcntl.h
+-
+sys/stat.h
+-
+stdio.h
+-
+stdint.h
+-
+sys/mman.h
+-
+memory.h
+-
+stdlib.h
+-
+unistd.h
+-
+Structures.h
+/home/elias/Desktop/Sigmod2019/src/Structures.h
 
-/home/elias/Desktop/Sigmod2019/Utils/Timer.c
+/home/elias/Desktop/Sigmod2019/src/Structures.h
+
+/home/elias/Desktop/Sigmod2019/src/Timer.c
 bits/types/clock_t.h
 -
 time.h
@@ -16,17 +36,19 @@ time.h
 stdio.h
 -
 
-/home/elias/Desktop/Sigmod2019/src/main.cpp
+/home/elias/Desktop/Sigmod2019/src/sort.cpp
 ctime
 -
 string.h
 /home/elias/Desktop/Sigmod2019/src/string.h
 stdio.h
 /home/elias/Desktop/Sigmod2019/src/stdio.h
-../Utils/Timer.c
-/home/elias/Desktop/Sigmod2019/Utils/Timer.c
-../DataStructures/Structures.h
-/home/elias/Desktop/Sigmod2019/DataStructures/Structures.h
+Timer.c
+/home/elias/Desktop/Sigmod2019/src/Timer.c
+Files.c
+/home/elias/Desktop/Sigmod2019/src/Files.c
+Structures.h
+/home/elias/Desktop/Sigmod2019/src/Structures.h
 sys/stat.h
 -
 cstdlib

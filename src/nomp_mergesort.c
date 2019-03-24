@@ -9,9 +9,13 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/mman.h>
-#include "get_time.c"
-#include "../Utils/Timer.c"
-#include "../DataStructures/Structures.h"
+#include "../Sorting/get_time.c"
+#include "Timer.c"
+#include "Structures.h"
+
+#ifndef SORTINGALGORITHM_MERGESORT_H
+#define SORTINGALGORITHM_MERGESORT_H
+
 
 // Arrays size <= SMALL switches to insertion sort
 #define SMALL    30
@@ -34,98 +38,37 @@ void run_omp(row a[], long int size, row temp[], int threads);
 #define handle_error(msg) \
   do { perror(msg); exit(EXIT_FAILURE); } while (0)
 
-long int total_rows;
-long int calTotalNoOfRows(const char *fileName) {
-    struct stat st;
 
-    /*get the size using stat()*/
-    stat(fileName, &st);
-
-    return (st.st_size) / ROWSIZE;
-}
-
-void printExecutionTime(const clock_t t, const char *msg) {
-    clock_t t1 = clock() - t;
-    double time_taken = (((double) t1) / CLOCKS_PER_SEC); // in seconds
-
-    printf("%s took: [%f] seconds to execute. \n", msg, time_taken);
-}
-
-void readFile(row *rows) {
-    FILE *file;
-    row buf;
-
-    file = fopen("input", "rb");
-    if (file == NULL) {
-        fprintf(stderr, "\nError opening file\n");
-    }
-
-    long int idx = 0;
-    while (fread(&buf, sizeof(struct row), 1, file)) {
-        memcpy(&rows[idx], &buf, sizeof(struct row));
-        ++idx;
-    }
-
-    fclose(file);
-}
-
-void bulkfRead(row *rows, const long long int totalRows) {
-    const unsigned char *memblock;
-    long int fd;
-    struct stat sb;
-
-    fd = open("input", O_RDONLY);
-    fstat(fd, &sb);
-    printf("Size: %lu\n",  sb.st_size);
-
-    memblock = (unsigned const char*)(mmap(NULL, sb.st_size, PROT_WRITE, MAP_PRIVATE, fd, 0));
-    if (memblock == (unsigned const char*)MAP_FAILED) handle_error("mmap");
-
-    long int idx = 0;
-    for(long int i = 0; i< totalRows; i += ROWSIZE){
-        memcpy(&rows[idx], &memblock + i, sizeof(struct row));
-        idx +=1;
-    }
-}
-
-void writeOutput(const row *rows, const int totalRows) {
-    FILE *write_ptr;
-    write_ptr = fopen("output", "wb");  // w for write, b for binary
-    for (int i = 0; i < totalRows; i++) {
-        fwrite(&rows[i], sizeof(struct row), 1, write_ptr);
-    }
-}
-
-int main() {
-
-    // Retrieve total number of rows.
-    total_rows = calTotalNoOfRows("input");
-
-    row rows[total_rows];
-    row temp[total_rows];
-
-    clock_t t0 = startTimer();
-    bulkfRead(rows, total_rows);
-    printExecutionTime(t0, "Reading the file");
-
-//  readFile(rows);
+//int main() {
+//
+//    // Retrieve total number of rows.
+//    total_rows = calTotalNoOfRows("input");
+//
+//    row rows[total_rows];
+//    row temp[total_rows];
+//
+//    clock_t t0 = startTimer();
+//    bulkfRead(rows, total_rows);
 //    printExecutionTime(t0, "Reading the file");
-
-    size_t structs_len = sizeof(rows) / sizeof(struct row);
-
-    clock_t t1 = startTimer();
-
-    // Parallel merge sort sorting Algorithm.
-        run_omp(rows, total_rows, temp, 4);
-        printExecutionTime(t1, "Sorting the file");
-
-    clock_t t2 = startTimer();
-    writeOutput(rows, total_rows);
-    printExecutionTime(t2, "Writing the file");
-
-
-    return 0;
-}
+//
+////  readFile(rows);
+////    printExecutionTime(t0, "Reading the file");
+//
+//    size_t structs_len = sizeof(rows) / sizeof(struct row);
+//
+//    clock_t t1 = startTimer();
+//
+//    // Parallel merge sort sorting Algorithm.
+//    run_omp(rows, total_rows, temp, 4);
+//    printExecutionTime(t1, "Sorting the file");
+//
+//    clock_t t2 = startTimer();
+//    writeOutput(rows, total_rows);
+//    printExecutionTime(t2, "Writing the file");
+//
+//
+//    return 0;
+//}
 
 // Driver
 void
@@ -208,22 +151,23 @@ merge(row a[], long int size, row temp[]) {
     memcpy(a, temp, size * sizeof(struct row));
 }
 
-    void
-    insertion_sort(row arr[], long int n)
-    {
-        row key;
-        long int i,  j;
-        for (i = 1; i < n; i++) {
-            key = arr[i];
-            j = i - 1;
+void
+insertion_sort(row arr[], long int n) {
+    row key;
+    long int i, j;
+    for (i = 1; i < n; i++) {
+        key = arr[i];
+        j = i - 1;
 
-            /* Move elements of arr[0..i-1], that are
-              greater than key, to one position ahead
-              of their current position */
-            while (j >= 0 && memcmp(arr[j].key, key.key, 10) > 0) {
-                arr[j + 1] = arr[j];
-                j = j - 1;
-            }
-            arr[j + 1] = key;
+        /* Move elements of arr[0..i-1], that are
+          greater than key, to one position ahead
+          of their current position */
+        while (j >= 0 && memcmp(arr[j].key, key.key, 10) > 0) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
         }
+        arr[j + 1] = key;
     }
+}
+
+#endif //SORTINGALGORITHM_MERGESORT_H
