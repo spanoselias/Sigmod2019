@@ -66,7 +66,6 @@ int main(int argc, char *argv[]) {
 
     qsort(rows, total_rows, sizeof(row), rowCmp);
     std::sort(rows, rows + (total_rows), comparison);
-    parallel_quicksort(rows, 0, total_rows - 1, 10);
 
     if (DEBUG)
         printExecutionTime(t1, "Sorting the file");

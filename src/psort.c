@@ -6,6 +6,7 @@
 #include <memory.h>
 #include "Structures.h"
 #include "Files.c"
+#include "Timer.c"
 
 unsigned long total_rows;
 
@@ -26,7 +27,7 @@ int partition(row *array, int left, int right, int pivot) {
     SWAP(array[pivot], array[right]);
     int storeIndex = left;
     for (int i = left; i < right; i++) {
-        if (memcmp(array[i].key, pivotValue.key, 10) <= 0) {
+        if (memcmp(&array[i].key, pivotValue.key, 10) <= 0) {
             SWAP(array[i], array[storeIndex]);
             storeIndex++;
         }
@@ -115,7 +116,7 @@ int debugMain(int argc, char **argv) {
     row *rows = (row *) (malloc(sizeof(struct row) * total_rows));
     readNFile(rows, total_rows, argv[1]);
 
-    parallel_quicksort(rows, 0, total_rows - 1, 11);
+    parallel_quicksort(rows, 0, total_rows - 1, 10);
 
     writeOutput(rows, total_rows, argv[2]);
 }
@@ -131,11 +132,18 @@ int main(int argc, char **argv) {
     total_rows = calTotalNoOfRows(argv[1]);
 
     row *rows = (row *) (malloc(sizeof(struct row) * total_rows));
+
+    clock_t t0 = startTimer();
     readNFile(rows, total_rows, argv[1]);
+    printExecutionTime(t0, "Reading the file");
 
-    parallel_quicksort(rows, 0, total_rows - 1, 7);
+    clock_t t1 = startTimer();
+    parallel_quicksort(rows, 0, total_rows - 1, 10);
+    printExecutionTime(t1, "Sorting the file");
 
+    clock_t t2 = startTimer();
     writeOutput(rows, total_rows, argv[2]);
+    printExecutionTime(t2, "Writing the file");
 
     return 0;
 }

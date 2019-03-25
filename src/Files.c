@@ -40,7 +40,7 @@ void readNFile(row *rows, long totalRows, char *filename) {
     long idx = 0;
     while ( fread( &buf, 100, 1, fd) ) {
 
-        rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
+//        rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
         rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
 
         memcpy(rows[idx].key, buf, 10);
@@ -67,50 +67,50 @@ void readNFile(row *rows, long totalRows, char *filename) {
 //    close(fd);
 //}
 
-void readFile(row *rows, long totalRows, char *filename) {
-    FILE *file;
-    row buf;
+//void readFile(row *rows, long totalRows, char *filename) {
+//    FILE *file;
+//    row buf;
+//
+//    file = fopen(filename, "r");
+//    if (file == NULL) {
+//        fprintf(stderr, "\nError opening file\n");
+//    }
+//
+//    long idx = 0;
+//    while (fread(&buf, 100, 1, file)) {
+//        rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
+//        rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
+//
+//        memcpy(&rows[idx].key, &buf, 10);
+//        memcpy(&rows[idx].data, &buf + 10, 90);
+//        ++idx;
+//    }
+//
+//    fclose(file);
+//}
 
-    file = fopen(filename, "r");
-    if (file == NULL) {
-        fprintf(stderr, "\nError opening file\n");
-    }
-
-    long idx = 0;
-    while (fread(&buf, 100, 1, file)) {
-        rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
-        rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
-
-        memcpy(&rows[idx].key, &buf, 10);
-        memcpy(&rows[idx].data, &buf + 10, 90);
-        ++idx;
-    }
-
-    fclose(file);
-}
-
-void bulkfRead(row *rows, const long totalRows, char *input) {
-    const unsigned char *memblock;
-    int fd;
-    struct stat sb;
-
-    fd = open(input, O_RDONLY);
-    fstat(fd, &sb);
-
-    memblock = (unsigned const char *) (mmap(NULL, sb.st_size, PROT_WRITE, MAP_PRIVATE, fd, 0));
-    if (memblock == (unsigned const char *) MAP_FAILED) handle_error("mmap");
-
-    int idx = 0;
-    for (int i = 0; i < totalRows; i+=100) {
-        rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
-        rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
-//        memcpy(&rows[idx], &memblock + i, 100);
-
-        memcpy(&rows[idx].key, &memblock + i, 10);
-        memcpy(&rows[idx].data, &memblock + i + 10, 90);
-        idx +=1;
-    }
-}
+//void bulkfRead(row *rows, const long totalRows, char *input) {
+//    const unsigned char *memblock;
+//    int fd;
+//    struct stat sb;
+//
+//    fd = open(input, O_RDONLY);
+//    fstat(fd, &sb);
+//
+//    memblock = (unsigned const char *) (mmap(NULL, sb.st_size, PROT_WRITE, MAP_PRIVATE, fd, 0));
+//    if (memblock == (unsigned const char *) MAP_FAILED) handle_error("mmap");
+//
+//    int idx = 0;
+//    for (int i = 0; i < totalRows; i+=100) {
+//        rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
+//        rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
+////        memcpy(&rows[idx], &memblock + i, 100);
+//
+//        memcpy(&rows[idx].key, &memblock + i, 10);
+//        memcpy(&rows[idx].data, &memblock + i + 10, 90);
+//        idx +=1;
+//    }
+//}
 
 void writeOutput(const row *rows, const long int totalRows, char *filename) {
     FILE *write_ptr;

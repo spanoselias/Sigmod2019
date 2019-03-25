@@ -7,11 +7,8 @@
 
 
 typedef struct row {
-    unsigned char *key;
+    unsigned char key[10];
     unsigned char *data;
-
-//    bool operator()(const row &lhs, const row &rhs) const { return memcmp(lhs.key, rhs.key, 10) < 1; }
-
 }row;
 
 
