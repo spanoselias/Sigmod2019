@@ -35,9 +35,7 @@ inline int rowCmp(const void *row1,
     return memcmp(newRow1->key, newRow2->key, 10);
 }
 
-
 bool comparison(row lhs, row rhs) { return memcmp(lhs.key, rhs.key, 10) < 1; }
-
 
 int main(int argc, char *argv[]) {
 
@@ -65,14 +63,14 @@ int main(int argc, char *argv[]) {
 
     clock_t t1 = startTimer();
 
-//  qsort(rows, total_rows, sizeof(row), rowCmp);
-    std::sort(rows, rows + (total_rows), comparison);
+     qsort(rows, total_rows, sizeof(row), rowCmp);
+//   std::sort(rows, rows + (total_rows), comparison);
 
     if (DEBUG)
         printExecutionTime(t1, "Sorting the file");
 
     clock_t t2 = startTimer();
-//    writeOutput(rows, total_rows, argv[2]);
+    writeOutput(rows, total_rows, argv[2]);
     if (DEBUG)
         printExecutionTime(t2, "Writing the file");
 
