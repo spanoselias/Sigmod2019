@@ -39,10 +39,10 @@ stdio.h
 /home/elias/Desktop/Sigmod2019/src/sort.cpp
 ctime
 -
-string.h
-/home/elias/Desktop/Sigmod2019/src/string.h
-stdio.h
-/home/elias/Desktop/Sigmod2019/src/stdio.h
+cstring
+-
+cstdio
+-
 Timer.c
 /home/elias/Desktop/Sigmod2019/src/Timer.c
 Files.c

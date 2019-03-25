@@ -24,21 +24,21 @@ inline unsigned int calTotalNoOfRows(const char *fileName) {
     /*get the size using stat()*/
     stat(fileName, &st);
 
-    return (unsigned int) (st.st_size) / ROWSIZE;
+    return (unsigned long) (st.st_size) / ROWSIZE;
 }
 
 void readNFile(row *rows, long totalRows, char *filename) {
-    int fd, bytes;
+    FILE *fd, bytes;
     unsigned char buf[100];
 
-    if ((fd = open(filename, O_RDONLY)) == -1) {
-        perror("open");
-        exit(1);
+    fd = fopen(filename, "r");
+    if (fd == nullptr) {
+        fprintf(stderr, "\nError opening file\n");
     }
 
     bzero(buf, sizeof(buf));
     long idx = 0;
-    while (bytes = read(fd, &buf, 100) > 0) {
+    while ( fread( &buf, 100, 1, fd) ) {
 
         rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
         rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
@@ -51,7 +51,7 @@ void readNFile(row *rows, long totalRows, char *filename) {
         ++idx;
     }
 
-    close(fd);
+    fclose(fd);
 }
 
 void writeNFile(row *rows, long totalRows, char *filename) {
@@ -101,10 +101,14 @@ void bulkfRead(row *rows, const long totalRows, char *input) {
     if (memblock == (unsigned const char *) MAP_FAILED) handle_error("mmap");
 
     int idx = 0;
-    for (int i = 0; i < totalRows; i++) {
+    for (int i = 0; i < totalRows; i+=100) {
         rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
         rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
-        memcpy(&rows[idx], &memblock + i, 100);
+//        memcpy(&rows[idx], &memblock + i, 100);
+
+        memcpy(&rows[idx].key, &memblock + i, 10);
+        memcpy(&rows[idx].data, &memblock + i + 10, 90);
+        idx +=1;
     }
 }
 
@@ -124,7 +128,7 @@ void bulkWriteOutput(const row *rows, const long int totalRows, char *ouput) {
 
     FILE *write_ptr;
     write_ptr = fopen(ouput, "wb");  // w for write, b for binary
-    fwrite(rows, 100, totalRows, write_ptr);
+    fwrite(rows, totalRows * 100, 1, write_ptr);
 
     fclose(write_ptr);
 }
