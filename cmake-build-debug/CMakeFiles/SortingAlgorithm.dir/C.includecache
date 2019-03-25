@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/elias/Desktop/Sigmod2019/DataStructures/Structures.h
-
-/home/elias/Desktop/Sigmod2019/Utils/Files.c
+/home/elias/Desktop/Sigmod2019/src/Files.c
 fcntl.h
 -
 sys/stat.h
@@ -23,14 +21,26 @@ memory.h
 -
 stdlib.h
 -
-../DataStructures/Structures.h
-/home/elias/Desktop/Sigmod2019/DataStructures/Structures.h
+unistd.h
+-
+Structures.h
+/home/elias/Desktop/Sigmod2019/src/Structures.h
 
-/home/elias/Desktop/Sigmod2019/Utils/Timer.c
-bits/types/clock_t.h
--
-time.h
--
+/home/elias/Desktop/Sigmod2019/src/Structures.h
+
+/home/elias/Desktop/Sigmod2019/src/psort.c
 stdio.h
 -
+stdlib.h
+-
+assert.h
+-
+pthread.h
+-
+memory.h
+-
+Structures.h
+/home/elias/Desktop/Sigmod2019/src/Structures.h
+Files.c
+/home/elias/Desktop/Sigmod2019/src/Files.c
 

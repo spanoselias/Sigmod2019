@@ -18,7 +18,7 @@
 
 #define ROWSIZE 100
 
-inline unsigned int calTotalNoOfRows(const char *fileName) {
+  unsigned int calTotalNoOfRows(const char *fileName) {
     struct stat st;
 
     /*get the size using stat()*/
@@ -32,7 +32,7 @@ void readNFile(row *rows, long totalRows, char *filename) {
     unsigned char buf[100];
 
     fd = fopen(filename, "r");
-    if (fd == nullptr) {
+    if (fd == NULL) {
         fprintf(stderr, "\nError opening file\n");
     }
 
@@ -54,25 +54,25 @@ void readNFile(row *rows, long totalRows, char *filename) {
     fclose(fd);
 }
 
-void writeNFile(row *rows, long totalRows, char *filename) {
-    int fd, bytes;
-
-    if ((fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC)) == -1) {
-        perror("open");
-        exit(1);
-    }
-
-    bytes = write(fd, rows, totalRows * 100); /* Data out */
-    printf("%d bytes were written\n", bytes);
-    close(fd);
-}
+//void writeNFile(row *rows, long totalRows, char *filename) {
+//    int fd, bytes;
+//
+//    if ((fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC)) == -1) {
+//        perror("open");
+//        exit(1);
+//    }
+//
+//    bytes = write(fd, rows, totalRows * 100); /* Data out */
+//    printf("%d bytes were written\n", bytes);
+//    close(fd);
+//}
 
 void readFile(row *rows, long totalRows, char *filename) {
     FILE *file;
     row buf;
 
     file = fopen(filename, "r");
-    if (file == nullptr) {
+    if (file == NULL) {
         fprintf(stderr, "\nError opening file\n");
     }
 
@@ -115,12 +115,18 @@ void bulkfRead(row *rows, const long totalRows, char *input) {
 void writeOutput(const row *rows, const long int totalRows, char *filename) {
     FILE *write_ptr;
     write_ptr = fopen(filename, "w");  // w for write, b for binary
-    char record[100];
+//    unsigned char record[100];
     for (int i = 0; i < totalRows; i++) {
 
-        bzero(record, sizeof(record));
-        sprintf(record, "%s%s", rows[i].key, rows[i].data);
-        fwrite(record, 100, 1, write_ptr);
+//        os.write(buffer[i].data(), 10);
+
+//         bzero(record, sizeof(record));
+//        sprintf(record, "%s%s", rows[i].key, rows[i].data);
+//        fwrite(record, 100, 1, write_ptr);
+         fwrite(rows[i].key,  10, 1, write_ptr);
+         fwrite(rows[i].data, 90, 1, write_ptr);
+
+
     }
 }
 
