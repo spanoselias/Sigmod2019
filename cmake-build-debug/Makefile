@@ -123,32 +123,32 @@ SortingAlgorithm/fast:
 	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/build
 .PHONY : SortingAlgorithm/fast
 
-src/psort.o: src/psort.c.o
+src/pQuickSort.o: src/pQuickSort.c.o
 
-.PHONY : src/psort.o
+.PHONY : src/pQuickSort.o
 
 # target to build an object file
-src/psort.c.o:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/psort.c.o
-.PHONY : src/psort.c.o
+src/pQuickSort.c.o:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/pQuickSort.c.o
+.PHONY : src/pQuickSort.c.o
 
-src/psort.i: src/psort.c.i
+src/pQuickSort.i: src/pQuickSort.c.i
 
-.PHONY : src/psort.i
+.PHONY : src/pQuickSort.i
 
 # target to preprocess a source file
-src/psort.c.i:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/psort.c.i
-.PHONY : src/psort.c.i
+src/pQuickSort.c.i:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/pQuickSort.c.i
+.PHONY : src/pQuickSort.c.i
 
-src/psort.s: src/psort.c.s
+src/pQuickSort.s: src/pQuickSort.c.s
 
-.PHONY : src/psort.s
+.PHONY : src/pQuickSort.s
 
 # target to generate assembly for a file
-src/psort.c.s:
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/psort.c.s
-.PHONY : src/psort.c.s
+src/pQuickSort.c.s:
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/pQuickSort.c.s
+.PHONY : src/pQuickSort.c.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... SortingAlgorithm"
-	@echo "... src/psort.o"
-	@echo "... src/psort.i"
-	@echo "... src/psort.s"
+	@echo "... src/pQuickSort.o"
+	@echo "... src/pQuickSort.i"
+	@echo "... src/pQuickSort.s"
 .PHONY : help
 
 

@@ -28,7 +28,15 @@ Structures.h
 
 /home/elias/Desktop/Sigmod2019/src/Structures.h
 
-/home/elias/Desktop/Sigmod2019/src/psort.c
+/home/elias/Desktop/Sigmod2019/src/Timer.c
+bits/types/clock_t.h
+-
+time.h
+-
+stdio.h
+-
+
+/home/elias/Desktop/Sigmod2019/src/pQuickSort.c
 stdio.h
 -
 stdlib.h
@@ -43,4 +51,6 @@ Structures.h
 /home/elias/Desktop/Sigmod2019/src/Structures.h
 Files.c
 /home/elias/Desktop/Sigmod2019/src/Files.c
+Timer.c
+/home/elias/Desktop/Sigmod2019/src/Timer.c
 

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/elias/Desktop/Sigmod2019/src/psort.c" "/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/src/psort.c.o"
+  "/home/elias/Desktop/Sigmod2019/src/pQuickSort.c" "/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/src/pQuickSort.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

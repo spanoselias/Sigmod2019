@@ -112,7 +112,7 @@ int main() {
 
 
     // Retrieve total number of rows.
-    total_rows = calTotalNoOfRows("input");
+    total_rows = calTotalNoOfRows("input_old");
 
     row rows[total_rows];
 

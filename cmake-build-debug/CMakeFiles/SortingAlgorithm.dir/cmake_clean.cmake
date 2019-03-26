@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/SortingAlgorithm.dir/src/psort.c.o"
+  "CMakeFiles/SortingAlgorithm.dir/src/pQuickSort.c.o"
   "SortingAlgorithm.pdb"
   "SortingAlgorithm"
 )

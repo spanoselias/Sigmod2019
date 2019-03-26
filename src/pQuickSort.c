@@ -17,6 +17,7 @@ unsigned long total_rows;
     y = tmp;\
 } while(0)
 
+
 /**
  * Partition the array.  Takes the index of the pivot point as the pivot
  * argument.  Puts all of the values lower than this point into the first part
@@ -27,7 +28,7 @@ int partition(row *array, int left, int right, int pivot) {
     SWAP(array[pivot], array[right]);
     int storeIndex = left;
     for (int i = left; i < right; i++) {
-        if (memcmp(&array[i].key, pivotValue.key, 10) <= 0) {
+        if (memcmp2(&array[i], &pivotValue) <= 0) {
             SWAP(array[i], array[storeIndex]);
             storeIndex++;
         }
@@ -103,26 +104,6 @@ void parallel_quicksort(row *array, int left, int right, int depth) {
 
 int debugMain(int argc, char **argv) {
 
-    printf("Sorting is starting...\n");
-
-    if (argc != 3) {
-        printf("[in-file] [outfile]\n");
-        exit(1);
-    }
-
-    // Retrieve total number of rows.
-    total_rows = calTotalNoOfRows(argv[1]);
-
-    row *rows = (row *) (malloc(sizeof(struct row) * total_rows));
-    readNFile(rows, total_rows, argv[1]);
-
-    parallel_quicksort(rows, 0, total_rows - 1, 10);
-
-    writeOutput(rows, total_rows, argv[2]);
-}
-
-int main(int argc, char **argv) {
-
     if (argc != 3) {
         printf("[in-file] [outfile]\n");
         exit(1);
@@ -144,6 +125,11 @@ int main(int argc, char **argv) {
     clock_t t2 = startTimer();
     writeOutput(rows, total_rows, argv[2]);
     printExecutionTime(t2, "Writing the file");
+}
+
+int main(int argc, char **argv) {
+
+    debugMain(argc, argv);
 
     return 0;
 }
