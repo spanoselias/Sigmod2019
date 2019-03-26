@@ -18,7 +18,7 @@
 
 #define ROWSIZE 100
 
-  unsigned int calTotalNoOfRows(const char *fileName) {
+unsigned int calTotalNoOfRows(const char *fileName) {
     struct stat st;
 
     /*get the size using stat()*/
@@ -36,17 +36,14 @@ void readNFile(row *rows, long totalRows, char *filename) {
         fprintf(stderr, "\nError opening file\n");
     }
 
-    bzero(buf, sizeof(buf));
     long idx = 0;
-    while ( fread( &buf, 100, 1, fd) ) {
+    while (fread(&buf, 100, 1, fd)) {
 
-//        rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
-        rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
+//       rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
+//        rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
 
         memcpy(rows[idx].key, buf, 10);
         memcpy(rows[idx].data, buf + 10, 90);
-
-        bzero(buf, sizeof(buf));
 
         ++idx;
     }
@@ -114,29 +111,37 @@ void readNFile(row *rows, long totalRows, char *filename) {
 
 void writeOutput(const row *rows, const long int totalRows, char *filename) {
     FILE *write_ptr;
-    write_ptr = fopen(filename, "w");  // w for write, b for binary
-//    unsigned char record[100];
+    write_ptr = fopen(filename, "wb");  // w for write, b for binary
+//    unsigned char record[101];
+
     for (int i = 0; i < totalRows; i++) {
 
 //        os.write(buffer[i].data(), 10);
 
 //         bzero(record, sizeof(record));
-//        sprintf(record, "%s%s", rows[i].key, rows[i].data);
-//        fwrite(record, 100, 1, write_ptr);
-         fwrite(rows[i].key,  10, 1, write_ptr);
-         fwrite(rows[i].data, 90, 1, write_ptr);
 
+        fwrite(rows[i].key, 10, 1, write_ptr);
+        fwrite(rows[i].data, 90, 1, write_ptr);
 
     }
-}
-
-void bulkWriteOutput(const row *rows, const long int totalRows, char *ouput) {
-
-    FILE *write_ptr;
-    write_ptr = fopen(ouput, "wb");  // w for write, b for binary
-    fwrite(rows, totalRows * 100, 1, write_ptr);
 
     fclose(write_ptr);
 }
+
+void bulkWriteOutput(row *rows, const long int totalRows, const char *ouput) {
+    FILE *outfile; /**< the destination file object */
+
+    outfile = fopen(ouput, "w");
+    if (outfile == NULL) {
+        fprintf(stderr, "\nError opening file\n"); /* Error reading the file, exit. */
+        exit(1);
+    }
+//    int i;
+//    for (i = 0; i < totalRows; i++) {
+        fwrite(rows, totalRows * 100, 1, outfile);
+//    }
+    fclose(outfile); /* never forget to close or your data won't be written. */
+}
+
 
 #endif //SORTINGALGORITHM_STRUCTURES_H

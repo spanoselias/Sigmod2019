@@ -8,8 +8,8 @@
 
 typedef struct row {
     unsigned char key[10];
-    unsigned char *data;
-}row;
+    unsigned char data[90];
+}row  ;
 
 
 #endif //SORTINGALGORITHM_STRUCTURES_H

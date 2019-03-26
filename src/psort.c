@@ -101,27 +101,7 @@ void parallel_quicksort(row *array, int left, int right, int depth) {
     }
 }
 
-int debugMain(int argc, char **argv) {
-
-    printf("Sorting is starting...\n");
-
-    if (argc != 3) {
-        printf("[in-file] [outfile]\n");
-        exit(1);
-    }
-
-    // Retrieve total number of rows.
-    total_rows = calTotalNoOfRows(argv[1]);
-
-    row *rows = (row *) (malloc(sizeof(struct row) * total_rows));
-    readNFile(rows, total_rows, argv[1]);
-
-    parallel_quicksort(rows, 0, total_rows - 1, 10);
-
-    writeOutput(rows, total_rows, argv[2]);
-}
-
-int main(int argc, char **argv) {
+int debug(int argc, char **argv) {
 
     if (argc != 3) {
         printf("[in-file] [outfile]\n");
@@ -142,8 +122,32 @@ int main(int argc, char **argv) {
     printExecutionTime(t1, "Sorting the file");
 
     clock_t t2 = startTimer();
-    writeOutput(rows, total_rows, argv[2]);
+    bulkWriteOutput(rows, total_rows, argv[2]);
     printExecutionTime(t2, "Writing the file");
+}
+
+int release(int argc, char **argv) {
+
+    if (argc != 3) {
+        printf("[in-file] [outfile]\n");
+        exit(1);
+    }
+
+    // Retrieve total number of rows.
+    total_rows = calTotalNoOfRows(argv[1]);
+
+    row *rows = (row *) (malloc(sizeof(struct row) * total_rows));
+
+    readNFile(rows, total_rows, argv[1]);
+
+    parallel_quicksort(rows, 0, total_rows - 1, 10);
+
+    bulkWriteOutput(rows, total_rows, argv[2]);
+}
+
+int main(int argc, char **argv) {
+
+    release(argc, argv);
 
     return 0;
 }
