@@ -140,7 +140,7 @@ int release(int argc, char **argv) {
 
     readNFile(rows, total_rows, argv[1]);
 
-    parallel_quicksort(rows, 0, total_rows - 1, 10);
+    parallel_quicksort(rows, 0, total_rows - 1, 9);
 
     bulkWriteOutput(rows, total_rows, argv[2]);
 }

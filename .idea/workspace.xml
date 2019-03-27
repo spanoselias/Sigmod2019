@@ -11,11 +11,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c8554b3-0ca4-47a2-8e67-07dfdd47740d" name="Default Changelist" comment="1) Parallel sorting.">
+    <list default="true" id="7c8554b3-0ca4-47a2-8e67-07dfdd47740d" name="Default Changelist" comment="1) Implement bulk writing.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Structures.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structures.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/compile.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/psort.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/psort.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -32,8 +29,8 @@
       <file leaf-file-name="Files.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Files.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="133" selection-start-line="133" selection-end-line="133" />
+            <state relative-caret-position="247">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
               </folding>
@@ -53,7 +50,7 @@
       <file leaf-file-name="sort.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sort.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
+            <state relative-caret-position="1452">
               <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
             </state>
           </provider>
@@ -62,8 +59,8 @@
       <file leaf-file-name="psort.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/psort.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="789">
-              <caret line="149" column="22" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
+            <state relative-caret-position="1955">
+              <caret line="142" column="49" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
               </folding>
@@ -183,9 +180,9 @@
         <option value="$PROJECT_DIR$/src/sub_zip.sh" />
         <option value="$PROJECT_DIR$/src/sort.cpp" />
         <option value="$PROJECT_DIR$/src/Structures.h" />
-        <option value="$PROJECT_DIR$/src/psort.c" />
-        <option value="$PROJECT_DIR$/src/compile.sh" />
         <option value="$PROJECT_DIR$/src/Files.c" />
+        <option value="$PROJECT_DIR$/src/compile.sh" />
+        <option value="$PROJECT_DIR$/src/psort.c" />
       </list>
     </option>
   </component>
@@ -222,6 +219,11 @@
               <item name="Sort" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sigmod2019" type="462c0819:PsiDirectoryNode" />
               <item name="SampleProgram" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sort" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sigmod2019" type="462c0819:PsiDirectoryNode" />
+              <item name="Sorting" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Sort" type="b2602c69:ProjectViewProjectNode" />
@@ -309,7 +311,8 @@
       <workItem from="1553513984587" duration="254000" />
       <workItem from="1553525196507" duration="5758000" />
       <workItem from="1553541730446" duration="11744000" />
-      <workItem from="1553635450485" duration="5270000" />
+      <workItem from="1553635450485" duration="5628000" />
+      <workItem from="1553701376305" duration="3545000" />
     </task>
     <task id="LOCAL-00001" summary="1) Rename variables.">
       <created>1552668511775</created>
@@ -451,20 +454,28 @@
       <option name="project" value="LOCAL" />
       <updated>1553553190724</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="1) Implement bulk writing.">
+      <created>1553640803861</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1553640803862</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102591000" />
+    <option name="totallyTimeSpent" value="106494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1175" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11693989" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11693989" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="CMake" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.27927062" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.69088936" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.15401301" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -482,30 +493,29 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="13" weight="0.23542117" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32917467" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="CMake" order="10" weight="0.3286334" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1420765" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.6919386" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17678958" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32917467" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.17895879" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.2646421" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.21976967" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.6919386" />
       <window_info anchor="bottom" id="Build" order="13" weight="0.23542117" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32917467" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.2646421" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="CMake" order="10" weight="0.3286334" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -544,7 +554,8 @@
     <MESSAGE value="1) Sorting using c++ sort." />
     <MESSAGE value="1) Full working version." />
     <MESSAGE value="1) Parallel sorting." />
-    <option name="LAST_COMMIT_MESSAGE" value="1) Parallel sorting." />
+    <MESSAGE value="1) Implement bulk writing." />
+    <option name="LAST_COMMIT_MESSAGE" value="1) Implement bulk writing." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -847,22 +858,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#33#52#0" expanded="true" />
-            <element signature="e#156#168#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/old_sub_zip.sh">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/run_sort.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Structures.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -880,18 +880,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sort.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
+        <state relative-caret-position="1452">
           <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/psort.c">
+    <entry file="file://$PROJECT_DIR$/src/run_sort.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="149" column="22" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="66">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -902,10 +899,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/psort.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="142" column="49" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
+          <folding>
+            <element signature="e#1#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Files.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="133" selection-start-line="133" selection-end-line="133" />
+        <state relative-caret-position="247">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#1#19#0" expanded="true" />
           </folding>
