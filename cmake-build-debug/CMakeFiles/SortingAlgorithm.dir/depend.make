@@ -3,5 +3,6 @@
 
 CMakeFiles/SortingAlgorithm.dir/src/psort.c.o: ../src/Files.c
 CMakeFiles/SortingAlgorithm.dir/src/psort.c.o: ../src/Structures.h
+CMakeFiles/SortingAlgorithm.dir/src/psort.c.o: ../src/Timer.c
 CMakeFiles/SortingAlgorithm.dir/src/psort.c.o: ../src/psort.c
 

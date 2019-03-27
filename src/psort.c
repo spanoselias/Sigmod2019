@@ -13,9 +13,11 @@ unsigned long total_rows;
 // Macro for swapping two values.
 #define SWAP(x, y) do {\
     __typeof__(x) tmp = x;\
-    x = y;\
-    y = tmp;\
+    (x) = y;\
+    (y) = tmp;\
 } while(0)
+
+
 
 /**
  * Partition the array.  Takes the index of the pivot point as the pivot
@@ -122,7 +124,7 @@ int debug(int argc, char **argv) {
     printExecutionTime(t1, "Sorting the file");
 
     clock_t t2 = startTimer();
-    bulkWriteOutput(rows, total_rows, argv[2]);
+    writeBStructOutput(rows, total_rows, argv[2]);
     printExecutionTime(t2, "Writing the file");
 }
 
@@ -140,14 +142,14 @@ int release(int argc, char **argv) {
 
     readNFile(rows, total_rows, argv[1]);
 
-    parallel_quicksort(rows, 0, total_rows - 1, 9);
+    parallel_quicksort(rows, 0, total_rows - 1, 10);
 
-    bulkWriteOutput(rows, total_rows, argv[2]);
+    writeOutput(rows, total_rows, argv[2]);
 }
 
 int main(int argc, char **argv) {
 
-    release(argc, argv);
+    debug(argc, argv);
 
     return 0;
 }

@@ -8,7 +8,7 @@
 
 typedef struct row {
     unsigned char key[10];
-    unsigned char data[90];
+    unsigned char *data;
 }row  ;
 
 
