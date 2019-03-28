@@ -64,8 +64,6 @@ unsigned int calTotalNoOfRows(const char *fileName) {
 void readNFile(row *rows, long totalRows, char *filename) {
     FILE *fd, bytes;
     unsigned char buf[100];
-    unsigned char bufKey1[8];
-    unsigned char bufKey2[2];
 
     fd = fopen(filename, "r");
     if (fd == NULL) {
@@ -79,12 +77,9 @@ void readNFile(row *rows, long totalRows, char *filename) {
 //      rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
         rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
 
-        memcpy(&bufKey1, buf, 8);
-        memcpy(&bufKey2, buf, 2);
-        rows[idx].key1 = (unsigned long long) *bufKey1;
-        rows[idx].key2 = (unsigned short) *bufKey2;
-
-        memcpy(rows[idx].data, buf + 10, 90);
+        memcpy(&rows[idx].key1, buf, 8);
+        memcpy(&rows[idx].key2, buf + 8, 2);
+        memcpy(&rows[idx].data, buf + 10, 90);
 
         ++idx;
     }
@@ -131,7 +126,7 @@ void writeOutput(const row *rows, const long int totalRows, char *filename) {
 
         fwrite(&rows[i].key1, 8, 1, write_ptr);
         fwrite(&rows[i].key2, 2, 1, write_ptr);
-        fwrite(rows[i].data, 90, 1, write_ptr);
+        fwrite(&rows[i].data, 90, 1, write_ptr);
     }
 }
 
