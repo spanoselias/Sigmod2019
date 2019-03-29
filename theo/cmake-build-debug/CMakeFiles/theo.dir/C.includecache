@@ -9,4 +9,18 @@
 /home/f/sigmod2019/theo/main.c
 stdio.h
 -
+stdlib.h
+-
+time.h
+-
+sys/stat.h
+-
+unistd.h
+-
+sys/mman.h
+-
+fcntl.h
+-
+assert.h
+-
 
