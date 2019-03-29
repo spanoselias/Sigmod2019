@@ -8,7 +8,7 @@
 #include "Files.c"
 #include "Timer.c"
 
-unsigned long total_rows;
+int total_rows;
 
 // Macro for swapping two values.
 #define SWAP(x, y) do {\
@@ -16,7 +16,6 @@ unsigned long total_rows;
     (x) = y;\
     (y) = tmp;\
 } while(0)
-
 
 
 /**
@@ -103,6 +102,21 @@ void parallel_quicksort(row *array, int left, int right, int depth) {
     }
 }
 
+packedRow *transformStruct(row *rows, long totalRows) {
+
+    packedRow *packedRows = (packedRow *) (malloc(sizeof(packedRow) * total_rows));
+    for (int i = 0; i < totalRows; i++) {
+        memcpy(packedRows->key, rows[i].key, 10);
+        memcpy(packedRows->data, rows[i].data, 90);
+        free(rows[i].data);
+    }
+
+    free(rows);
+
+    return packedRows;
+}
+
+
 int debug(int argc, char **argv) {
 
     if (argc != 3) {
@@ -110,10 +124,14 @@ int debug(int argc, char **argv) {
         exit(1);
     }
 
+    clock_t t11 = startTimer();
     // Retrieve total number of rows.
     total_rows = calTotalNoOfRows(argv[1]);
+    printExecutionTime(t11, "Calculating file size time:");
 
+    clock_t t12 = startTimer();
     row *rows = (row *) (malloc(sizeof(struct row) * total_rows));
+    printExecutionTime(t12, "Malloc the array: ");
 
     clock_t t0 = startTimer();
     readNFile(rows, total_rows, argv[1]);
@@ -123,8 +141,12 @@ int debug(int argc, char **argv) {
     parallel_quicksort(rows, 0, total_rows - 1, 10);
     printExecutionTime(t1, "Sorting the file");
 
+    clock_t t13 = startTimer();
+//    packedRow* pRows = transformStruct(rows, total_rows);
+    printExecutionTime(t13, "Transforming the array");
+
     clock_t t2 = startTimer();
-    writeBStructOutput(rows, total_rows, argv[2]);
+    bulkWriteOutput(rows, total_rows, argv[2]);
     printExecutionTime(t2, "Writing the file");
 }
 
@@ -144,12 +166,12 @@ int release(int argc, char **argv) {
 
     parallel_quicksort(rows, 0, total_rows - 1, 10);
 
-    writeOutput(rows, total_rows, argv[2]);
+    bulkWriteOutput(rows, total_rows, argv[2]);
 }
 
 int main(int argc, char **argv) {
 
-    debug(argc, argv);
+    release(argc, argv);
 
     return 0;
 }
