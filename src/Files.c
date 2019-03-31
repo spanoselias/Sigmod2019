@@ -31,7 +31,7 @@ void readNFile(row *rows, long totalRows, char *filename) {
     FILE *fd, bytes;
     unsigned char buf[100];
 
-    fd = fopen(filename, "r");
+    fd = fopen(filename, "rb");
     if (fd == NULL) {
         fprintf(stderr, "\nError opening file\n");
     }
@@ -40,12 +40,45 @@ void readNFile(row *rows, long totalRows, char *filename) {
     while (fread(&buf, 100, 1, fd)) {
 
 //       rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
-       rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
+//        rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
 
         memcpy(rows[idx].key, buf, 10);
         memcpy(rows[idx].data, buf + 10, 90);
 
         ++idx;
+    }
+
+    fclose(fd);
+}
+
+void readNBytesFile(row *rows, long totalRows, char *filename) {
+    FILE *fd, bytes;
+    int bufferSize = 10000;
+
+    unsigned char buf[bufferSize];
+
+    fd = fopen(filename, "r");
+    if (fd == NULL) {
+        fprintf(stderr, "\nError opening file\n");
+    }
+
+    long idx = 0;
+    while (fread(&buf, bufferSize, 1, fd)) {
+
+        for (int i = 0; i < bufferSize; i += 100) {
+
+            if (idx >= totalRows) {
+                return;
+            }
+
+//            rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
+
+            memcpy(rows[idx].key, buf + i, 10);
+            memcpy(rows[idx].data, buf + i + 10, 90);
+
+            ++idx;
+        }
+
     }
 
     fclose(fd);
@@ -66,28 +99,17 @@ void bulkfRead(row *rows, const long totalRows, char *input) {
     int offset = 0;
     for (int i = 0; i < totalRows; i++) {
 //        rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
-//        rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
+//         rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
 //        memcpy(&rows[idx], &memblock + i, 100);
 
         memcpy(rows[idx].key, memblock + i, 10);
         memcpy(rows[idx].data, memblock + i + 10, 90);
-        offset +=100;
+        offset += 100;
     }
 }
 
 
-//void writeNFile(row *rows, long totalRows, char *filename) {
-//    int fd, bytes;
-//
-//    if ((fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC)) == -1) {
-//        perror("open");
-//        exit(1);
-//    }
-//
-//    bytes = write(fd, rows, totalRows * 100); /* Data out */
-//    printf("%d bytes were written\n", bytes);
-//    close(fd);
-//}
+
 
 //void readFile(row *rows, long totalRows, char *filename) {
 //    FILE *file;
@@ -112,7 +134,6 @@ void bulkfRead(row *rows, const long totalRows, char *input) {
 //}
 
 
-
 void writeOutput(const row *rows, const long int totalRows, char *filename) {
     FILE *write_ptr;
     write_ptr = fopen(filename, "wb");  // w for write, b for binary
@@ -120,9 +141,7 @@ void writeOutput(const row *rows, const long int totalRows, char *filename) {
 
     for (int i = 0; i < totalRows; i++) {
 
-//        os.write(buffer[i].data(), 10);
-
-//         bzero(record, sizeof(record));
+//      bzero(record, sizeof(record));
 
         fwrite(rows[i].key, 10, 1, write_ptr);
         fwrite(rows[i].data, 90, 1, write_ptr);
@@ -132,16 +151,16 @@ void writeOutput(const row *rows, const long int totalRows, char *filename) {
     fclose(write_ptr);
 }
 
-void writeBStructOutput(const row *rows, const long int totalRows, char *filename) {
+void writeBStructOutput(const packedRow *rows, const long int totalRows, char *filename) {
     FILE *write_ptr;
     write_ptr = fopen(filename, "wb");  // w for write, b for binary
-    unsigned char record[100];
+    unsigned char record[10000];
 
     for (int i = 0; i < totalRows; i++) {
 
-//        memcpy(record, rows[i].key, 10);
-//        memcpy((record + 10), rows[i].data, 90);
-        fwrite(rows, 100, 1, write_ptr);
+//   memcpy(record, rows[i].key, 10);
+//   memcpy((record + 10), rows[i].data, 90);
+     fwrite(rows, 100, 1, write_ptr);
 
     }
 
@@ -152,17 +171,30 @@ void writeBStructOutput(const row *rows, const long int totalRows, char *filenam
 void bulkWriteOutput(row *rows, const long int totalRows, const char *ouput) {
     FILE *outfile; /**< the destination file object */
 
-    outfile = fopen(ouput, "w");
+    outfile = fopen(ouput, "wb");
     if (outfile == NULL) {
         fprintf(stderr, "\nError opening file\n"); /* Error reading the file, exit. */
         exit(1);
     }
 //    int i;
 //    for (i = 0; i < totalRows; i++) {
-        fwrite(rows, totalRows * 100, 1, outfile);
+     fwrite(rows, totalRows * 100, 1, outfile);
 //    }
     fclose(outfile); /* never forget to close or your data won't be written. */
 }
 
+
+void writeToFileSysCall(row *rows, long totalRows, char *filename) {
+    int fd, bytes;
+
+    if ((fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600)) == -1) {
+        perror("open");
+        exit(1);
+    }
+
+    bytes = write(fd, rows, totalRows * 100); /* Data out */
+//    printf("%d bytes were written\n", bytes);
+    close(fd);
+}
 
 #endif //SORTINGALGORITHM_STRUCTURES_H
