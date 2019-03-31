@@ -17,10 +17,14 @@ sys/stat.h
 -
 unistd.h
 -
-sys/mman.h
--
 fcntl.h
 -
-assert.h
+pthread.h
 -
+string.h
+-
+myFunctions.h
+/home/f/sigmod2019/theo/myFunctions.h
+
+/home/f/sigmod2019/theo/myFunctions.h
 

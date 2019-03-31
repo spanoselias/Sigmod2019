@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/theo.dir/main.c.o  -o theo 
+/usr/bin/cc -g   CMakeFiles/theo.dir/main.c.o  -o theo -pthread 

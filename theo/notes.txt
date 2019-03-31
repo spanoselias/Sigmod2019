@@ -1,0 +1,17 @@
+with array:
+
+Read from file: 11
+
+Make the array for sorting: 2
+
+Sort the elements: 39
+
+Write to file: 19
+
+without array:
+
+Read from file: 11
+
+Sort the elements: 76
+
+Write to file: 15

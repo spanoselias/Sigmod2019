@@ -201,3 +201,17 @@ make[1]: Leaving directory '/home/f/sigmod2019/theo/cmake-build-debug/CMakeFiles
     Feature record: C_FEATURE:0c_restrict
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/f/sigmod2019/theo/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_43288/fast"
+/usr/bin/make -f CMakeFiles/cmTC_43288.dir/build.make CMakeFiles/cmTC_43288.dir/build
+make[1]: Entering directory '/home/f/sigmod2019/theo/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_43288.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -std=gnu11 -o CMakeFiles/cmTC_43288.dir/CheckIncludeFile.c.o   -c /home/f/sigmod2019/theo/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_43288
+/home/f/clion/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43288.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_43288.dir/CheckIncludeFile.c.o  -o cmTC_43288 
+make[1]: Leaving directory '/home/f/sigmod2019/theo/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+

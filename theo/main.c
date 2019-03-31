@@ -3,88 +3,84 @@
 #include <time.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include <sys/mman.h>
 #include <fcntl.h>
-#include <assert.h>
+#include <pthread.h>
+#include <string.h>
+#include "myFunctions.h"
 
-#define PAGE_SIZE 4096
+unsigned long long inputFileSize;
+unsigned char *data;
+long long bytesRead;
+unsigned long long arrayForSortingSize;
+unsigned long long *arrayForSorting;
 
-char *data;
-
-int comparator(const void *p, const void *q) {
-    int diff = ((unsigned long long) p >> 35) - ((unsigned long long) q >> 35);
-
-    if (diff != 0) return diff;
-
-
-}
-
-long long getFileSize(char *fileName) {
-    struct stat st;
-
-    stat(fileName, &st);
-
-    return st.st_size;
+int cmp(const void *a, const void *b) {
+    return memcmp(a, b, 10);
 }
 
 int main() {
     time_t start = time(NULL);
 
     char *inputFileName = "../../../input";
-    long long inputFileSize = getFileSize(inputFileName);
+    inputFileSize = getFileSize(inputFileName);
     data = malloc(inputFileSize);
 
     int inputFile = open(inputFileName, O_RDONLY);
 
-    for (long long i = 0; i < inputFileSize; i += PAGE_SIZE)
-        read(inputFile, (data + i), PAGE_SIZE);
+    for (bytesRead = 0; bytesRead < inputFileSize - PAGE_SIZE; bytesRead += PAGE_SIZE)
+        read(inputFile, (data + bytesRead), PAGE_SIZE);
 
     read(inputFile, (data + inputFileSize - inputFileSize % PAGE_SIZE),
          inputFileSize % PAGE_SIZE);
 
-    int arraySize = inputFileSize / 100;
-    unsigned long long *array = malloc(arraySize * sizeof(long long));
+    bytesRead += inputFileSize % PAGE_SIZE;
 
     time_t stop = time(NULL);
     printf("Read from file: %ld\n", stop - start);
 
-    start = time(0);
-    for (long long i = 0; i < arraySize; ++i)
-        array[i] = (*(unsigned long long *) &data[i * 100] & 0xFFFFFFF800000000)
-                   | (unsigned long long) i * 100;
+    arrayForSortingSize = inputFileSize / TUPLE_SIZE * 2;
+    arrayForSorting = malloc(arrayForSortingSize * sizeof(long long));
 
+    start = time(0);
+    for (unsigned long long i = 0; i < arrayForSortingSize; i += 2) {
+        arrayForSorting[i] = ptrToLong(&data[i * 50]);
+        arrayForSorting[i + 1] = ptrToShortAndOffset(&data[i * 50 + 8], i * 50);
+    }
     stop = time(0);
-    printf("Make array for sorting: %ld\n", stop - start);
+    printf("\nMake the array for sorting: %ld\n", stop - start);
 
-    for (int j = 0; j < 8; ++j)
-        printf("%d ", data[j]);
-    for (int j = 100; j < 108; ++j)
-        printf("%d ", data[j]);
-
-    printf("\n");
-    for (int j = 0; j < 16; ++j)
-        printf("%d ", *((char *) array + j));
+//    for (int j = 100; j < 116; ++j)
+//        printf("%x ", data[j]);
+//    printf("\n");
+//    for (int j = 16; j < 32; ++j)
+//        printf("%x ", *((unsigned char *) arrayForSorting + j));
+//    printf("%llu %llu\n", arrayForSorting[0], arrayForSorting[2]);
 
     start = time(0);
-
-    qsort(array, arraySize, sizeof(unsigned long long), comparator);
-
+    qsort(data, inputFileSize / 100, 100, cmp);
+//    qsort(arrayForSorting, inputFileSize / 100, 2 * sizeof(long long), comparator);
     stop = time(0);
     printf("\nSort the elements: %ld\n", stop - start);
 
     start = time(0);
     FILE *outputFile = fopen("../../../output", "wb+");
 
-    for (int i = 0; i < arraySize; ++i) {
-        fwrite(data + (array[i] & 0x00000007FFFFFFFF), 100, 1, outputFile);
+//    for (unsigned long long i = 1; i < arrayForSortingSize; i += 2) {
+//        fwrite((unsigned char *) (data + getOffsetFromLong(arrayForSorting[i])), 100, 1, outputFile);
+//    }
+    for (unsigned long long i = 0; i < inputFileSize - PAGE_SIZE; i += PAGE_SIZE) {
+        fwrite((unsigned char *) (data + i), PAGE_SIZE, 1, outputFile);
     }
+    fwrite((data + inputFileSize - inputFileSize % PAGE_SIZE),
+         inputFileSize % PAGE_SIZE, 1, outputFile);
+
 
     stop = time(0);
     printf("\nWrite to file: %ld\n", stop - start);
 
     fclose(outputFile);
     free(data);
-    free(array);
+    free(arrayForSorting);
 
     return 0;
 }
