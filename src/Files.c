@@ -40,7 +40,7 @@ void readNFile(row *rows, long totalRows, char *filename) {
     while (fread(&buf, 100, 1, fd)) {
 
 //       rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
-//        rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
+//       rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
 
         memcpy(rows[idx].key, buf, 10);
         memcpy(rows[idx].data, buf + 10, 90);

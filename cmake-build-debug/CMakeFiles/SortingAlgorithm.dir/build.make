@@ -57,38 +57,38 @@ include CMakeFiles/SortingAlgorithm.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SortingAlgorithm.dir/flags.make
 
-CMakeFiles/SortingAlgorithm.dir/src/psort.c.o: CMakeFiles/SortingAlgorithm.dir/flags.make
-CMakeFiles/SortingAlgorithm.dir/src/psort.c.o: ../src/psort.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SortingAlgorithm.dir/src/psort.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SortingAlgorithm.dir/src/psort.c.o   -c /home/elias/Desktop/Sigmod2019/src/psort.c
+CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o: CMakeFiles/SortingAlgorithm.dir/flags.make
+CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o: ../src/pbitonic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o   -c /home/elias/Desktop/Sigmod2019/src/pbitonic.c
 
-CMakeFiles/SortingAlgorithm.dir/src/psort.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SortingAlgorithm.dir/src/psort.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/elias/Desktop/Sigmod2019/src/psort.c > CMakeFiles/SortingAlgorithm.dir/src/psort.c.i
+CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/elias/Desktop/Sigmod2019/src/pbitonic.c > CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.i
 
-CMakeFiles/SortingAlgorithm.dir/src/psort.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SortingAlgorithm.dir/src/psort.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/elias/Desktop/Sigmod2019/src/psort.c -o CMakeFiles/SortingAlgorithm.dir/src/psort.c.s
+CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/elias/Desktop/Sigmod2019/src/pbitonic.c -o CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.s
 
-CMakeFiles/SortingAlgorithm.dir/src/psort.c.o.requires:
+CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o.requires:
 
-.PHONY : CMakeFiles/SortingAlgorithm.dir/src/psort.c.o.requires
+.PHONY : CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o.requires
 
-CMakeFiles/SortingAlgorithm.dir/src/psort.c.o.provides: CMakeFiles/SortingAlgorithm.dir/src/psort.c.o.requires
-	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/psort.c.o.provides.build
-.PHONY : CMakeFiles/SortingAlgorithm.dir/src/psort.c.o.provides
+CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o.provides: CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o.requires
+	$(MAKE) -f CMakeFiles/SortingAlgorithm.dir/build.make CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o.provides.build
+.PHONY : CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o.provides
 
-CMakeFiles/SortingAlgorithm.dir/src/psort.c.o.provides.build: CMakeFiles/SortingAlgorithm.dir/src/psort.c.o
+CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o.provides.build: CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o
 
 
 # Object files for target SortingAlgorithm
 SortingAlgorithm_OBJECTS = \
-"CMakeFiles/SortingAlgorithm.dir/src/psort.c.o"
+"CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o"
 
 # External object files for target SortingAlgorithm
 SortingAlgorithm_EXTERNAL_OBJECTS =
 
-SortingAlgorithm: CMakeFiles/SortingAlgorithm.dir/src/psort.c.o
+SortingAlgorithm: CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o
 SortingAlgorithm: CMakeFiles/SortingAlgorithm.dir/build.make
 SortingAlgorithm: CMakeFiles/SortingAlgorithm.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/elias/Desktop/Sigmod2019/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable SortingAlgorithm"
@@ -99,7 +99,7 @@ CMakeFiles/SortingAlgorithm.dir/build: SortingAlgorithm
 
 .PHONY : CMakeFiles/SortingAlgorithm.dir/build
 
-CMakeFiles/SortingAlgorithm.dir/requires: CMakeFiles/SortingAlgorithm.dir/src/psort.c.o.requires
+CMakeFiles/SortingAlgorithm.dir/requires: CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o.requires
 
 .PHONY : CMakeFiles/SortingAlgorithm.dir/requires
 

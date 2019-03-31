@@ -90,6 +90,7 @@ void parallel_quicksort(row *array, int left, int right, int depth) {
             struct qsort_starter arg = {array, left, pivotIndex - 1, depth};
             pthread_t thread;
             int ret = pthread_create(&thread, NULL, quicksort_thread, &arg);
+//            printf("\nthread id = %d\n", thread);
             assert((ret == 0) && "Thread creation failed");
             // Perform the second recursive call in this thread
             parallel_quicksort(array, pivotIndex + 1, right, depth);
@@ -141,10 +142,6 @@ int debug(int argc, char **argv) {
     parallel_quicksort(rows, 0, total_rows - 1, 10);
     printExecutionTime(t1, "Sorting the file");
 
-    clock_t t13 = startTimer();
-//    packedRow* pRows = transformStruct(rows, total_rows);
-    printExecutionTime(t13, "Transforming the array");
-
     clock_t t2 = startTimer();
     bulkWriteOutput(rows, total_rows, argv[2]);
     printExecutionTime(t2, "Writing the file");
@@ -164,14 +161,14 @@ int release(int argc, char **argv) {
 
     readNFile(rows, total_rows, argv[1]);
 
-    parallel_quicksort(rows, 0, total_rows - 1, 10);
+    parallel_quicksort(rows, 0, total_rows - 1, 4);
 
     bulkWriteOutput(rows, total_rows, argv[2]);
 }
 
 int main(int argc, char **argv) {
 
-    release(argc, argv);
+    debug(argc, argv);
 
     return 0;
 }

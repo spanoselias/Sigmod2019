@@ -36,21 +36,25 @@ time.h
 stdio.h
 -
 
-/home/elias/Desktop/Sigmod2019/src/psort.c
+/home/elias/Desktop/Sigmod2019/src/pbitonic.c
 stdio.h
 -
 stdlib.h
 -
-assert.h
+string.h
 -
-pthread.h
+time.h
 -
-memory.h
+sys/time.h
 -
-Structures.h
-/home/elias/Desktop/Sigmod2019/src/Structures.h
+omp.h
+-
+tgmath.h
+-
 Files.c
 /home/elias/Desktop/Sigmod2019/src/Files.c
+Structures.h
+/home/elias/Desktop/Sigmod2019/src/Structures.h
 Timer.c
 /home/elias/Desktop/Sigmod2019/src/Timer.c
 

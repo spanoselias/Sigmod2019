@@ -100,7 +100,6 @@ int main() {
         puts("Warning: Nested parallelism desired but unavailable");
     }
 
-
     // Array allocation
     int *a = malloc(sizeof(int) * size);
     int *temp = malloc(sizeof(int) * size);

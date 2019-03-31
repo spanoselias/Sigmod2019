@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/SortingAlgorithm.dir/src/psort.c.o  -o SortingAlgorithm -lpthread -lm 
+/usr/bin/cc -g   CMakeFiles/SortingAlgorithm.dir/src/pbitonic.c.o  -o SortingAlgorithm -lpthread -fpermissive -fopenmp  -lm 

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/omp_mergesort.c" line="117" />
+    <bookmark url="file://$PROJECT_DIR$/src/pbitonic.c" line="236" />
+    <bookmark url="file://$PROJECT_DIR$/src/pbitonic.c" line="132" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
       <config projectName="SortingAlgorithm" targetName="SortingAlgorithm" />
@@ -11,13 +16,30 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c8554b3-0ca4-47a2-8e67-07dfdd47740d" name="Default Changelist" comment="1) Speed-up code.">
+    <list default="true" id="7c8554b3-0ca4-47a2-8e67-07dfdd47740d" name="Default Changelist" comment="1) Replace pointer with array.">
+      <change afterPath="$PROJECT_DIR$/src/ompExample.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/omp_mergesort.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pbitonic.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sorting/omp_mergesort.c" beforeDir="false" afterPath="$PROJECT_DIR$/Sorting/omp_mergesort.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SortingAlgorithm.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/SortingAlgorithm" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SortingAlgorithm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/SortingAlgorithm.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/SortingAlgorithm.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Files.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Files.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Structures.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structures.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timer.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timer.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/compile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/compile.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/old_sub_zip.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/old_sub_zip.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/psort.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/psort.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sub_zip.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/sub_zip.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +52,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Files.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Files.c">
+      <file leaf-file-name="omp_mergesort.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/omp_mergesort.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="170" column="5" selection-start-line="170" selection-start-column="5" selection-end-line="170" selection-end-column="5" />
+            <state relative-caret-position="2684">
+              <caret line="122" column="17" selection-start-line="122" selection-start-column="17" selection-end-line="122" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="psort.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/psort.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2992">
+              <caret line="136" column="30" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="30" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
               </folding>
@@ -42,11 +73,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sort.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sort.cpp">
+      <file leaf-file-name="old_sub_zip.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/old_sub_zip.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="880">
-              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+            <state relative-caret-position="66">
+              <caret line="3" selection-start-line="3" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pbitonic.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pbitonic.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4818">
+              <caret line="219" column="12" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ompExample.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ompExample.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="29" column="2" lean-forward="true" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sub_zip.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sub_zip.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="68" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -54,38 +115,17 @@
       <file leaf-file-name="input_old" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/input_old">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" selection-end-line="3" />
+            <state relative-caret-position="176">
+              <caret line="8" selection-start-line="8" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Structures.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Structures.h">
+      <file leaf-file-name="input" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/input">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="psort.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/psort.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
-              <folding>
-                <element signature="e#1#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run_sort.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/run_sort.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+            <state relative-caret-position="198">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -93,8 +133,17 @@
       <file leaf-file-name="compile.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/compile.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            <state relative-caret-position="198">
+              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="output" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/build/release/output">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -103,36 +152,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>int main</find>
-      <find>Thread</find>
-      <find>int</find>
-      <find>mergesort_parallel_omp</find>
-      <find>clock</find>
-      <find>threads</find>
-      <find>_qsort</find>
-      <find>text</find>
-      <find>total_rows</find>
-      <find>main</find>
-      <find>total</find>
-      <find>omp</find>
-      <find>data</find>
-      <find>rowCmp</find>
-      <find>row</find>
-      <find>writeNFile</find>
-      <find>argv[1]</find>
-      <find>parallel_quicksort</find>
-      <find>size</find>
-      <find>depth</find>
-      <find>init;</find>
-      <find>nullptr</find>
-      <find>rows[idx].key</find>
-      <find>partition</find>
-      <find>init</find>
-      <find>mem</find>
+      <find>omp_set_nested</find>
+      <find>get_time</find>
+      <find>run_omp</find>
+      <find>cm</find>
       <find>memcmp</find>
-      <find>bul</find>
-      <find>10000</find>
-      <find>read</find>
+      <find>merge(</find>
+      <find>create_threads_and_exec</find>
+      <find>sizeof(int)</find>
+      <find>sizeof(row)</find>
+      <find>cmpfunc_des</find>
+      <find>sizeof(row</find>
+      <find>free()</find>
+      <find>write</find>
+      <find>rec_bitonic_sort</find>
+      <find>SWAP(</find>
+      <find>SWAP</find>
+      <find>compare</find>
+      <find>bitonic_sort</find>
+      <find>parallel_threshold</find>
+      <find>bitonic_merge</find>
+      <find>N</find>
+      <find>parse_arguments</find>
+      <find>memcm</find>
+      <find>qsort</find>
+      <find>current_threads</find>
+      <find>merge</find>
+      <find>excga</find>
+      <find>thres</find>
+      <find>Nthreads</find>
+      <find>main</find>
     </findStrings>
     <replaceStrings>
       <replace>int</replace>
@@ -143,7 +192,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="UsedTypes" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="PUSH_TAGS">
@@ -169,7 +218,6 @@
         <option value="$PROJECT_DIR$/Sorting/serial_mergesort.c" />
         <option value="$PROJECT_DIR$/Sorting/get_time.c" />
         <option value="$PROJECT_DIR$/Sorting/nomp_mergesort.cpp" />
-        <option value="$PROJECT_DIR$/Sorting/omp_mergesort.c" />
         <option value="$PROJECT_DIR$/Sorting/nomp_mergesort_working.c" />
         <option value="$PROJECT_DIR$/DataStructures/structures.h" />
         <option value="$PROJECT_DIR$/Utils/files.c" />
@@ -180,7 +228,6 @@
         <option value="$PROJECT_DIR$/Utils/Files.c" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/nomp_mergesort.c" />
-        <option value="$PROJECT_DIR$/src/input" />
         <option value="$PROJECT_DIR$/SampleProgram/submission/sort.cc" />
         <option value="$PROJECT_DIR$/src/run_sort.sh" />
         <option value="$PROJECT_DIR$/src/utils.h" />
@@ -189,13 +236,25 @@
         <option value="$PROJECT_DIR$/src/utils.c" />
         <option value="$PROJECT_DIR$/src/qsort3way.h" />
         <option value="$PROJECT_DIR$/src/qsort3way.c" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/sub_zip.sh" />
         <option value="$PROJECT_DIR$/src/sort.cpp" />
-        <option value="$PROJECT_DIR$/src/Files.c" />
-        <option value="$PROJECT_DIR$/src/compile.sh" />
         <option value="$PROJECT_DIR$/src/Structures.h" />
+        <option value="$PROJECT_DIR$/radixmp.h" />
+        <option value="$PROJECT_DIR$/src/radixmp.c" />
+        <option value="$PROJECT_DIR$/src/Timer.c" />
+        <option value="$PROJECT_DIR$/src/pmergeSort.cpp" />
         <option value="$PROJECT_DIR$/src/psort.c" />
+        <option value="$PROJECT_DIR$/Sorting/omp_mergesort.c" />
+        <option value="$PROJECT_DIR$/src/omp_mergesort.c" />
+        <option value="$PROJECT_DIR$/src/Files.c" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/build/release/output" />
+        <option value="$PROJECT_DIR$/src/old_sub_zip.sh" />
+        <option value="$PROJECT_DIR$/src/sub_zip.sh" />
+        <option value="$PROJECT_DIR$/src/compile.sh" />
+        <option value="$PROJECT_DIR$/src/input_old" />
+        <option value="$PROJECT_DIR$/src/input" />
+        <option value="$PROJECT_DIR$/src/pbitonic.c" />
+        <option value="$PROJECT_DIR$/src/ompExample.c" />
       </list>
     </option>
   </component>
@@ -234,7 +293,25 @@
             <path>
               <item name="Sort" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sigmod2019" type="462c0819:PsiDirectoryNode" />
+              <item name="Sorting" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sort" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sigmod2019" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sort" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sigmod2019" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sort" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sigmod2019" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="release" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -249,17 +326,17 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/Sorting" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/Sorting" />
       <recent name="$PROJECT_DIR$/DataStructures" />
       <recent name="$PROJECT_DIR$/Resources" />
       <recent name="$PROJECT_DIR$/Utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Sorting" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -326,7 +403,11 @@
       <workItem from="1553806274995" duration="752000" />
       <workItem from="1553807455516" duration="4134000" />
       <workItem from="1553882321262" duration="2995000" />
-      <workItem from="1553887627546" duration="1036000" />
+      <workItem from="1553887627546" duration="7791000" />
+      <workItem from="1553900897847" duration="3592000" />
+      <workItem from="1553937126128" duration="2993000" />
+      <workItem from="1553969056733" duration="18016000" />
+      <workItem from="1554035212652" duration="647000" />
     </task>
     <task id="LOCAL-00001" summary="1) Rename variables.">
       <created>1552668511775</created>
@@ -482,38 +563,45 @@
       <option name="project" value="LOCAL" />
       <updated>1553704967094</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="1) Replace pointer with array.">
+      <created>1553890877888</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1553890877888</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129790000" />
+    <option name="totallyTimeSpent" value="161793000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1175" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1852459" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13551913" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.31861803" />
       <window_info anchor="bottom" id="CMake" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.69088936" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.15355086" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20932755" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.21976967" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.21880998" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.13774404" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="13" weight="0.23542117" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.27927062" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.27874187" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.19197397" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -576,7 +664,8 @@
     <MESSAGE value="1) Parallel sorting." />
     <MESSAGE value="1) Implement bulk writing." />
     <MESSAGE value="1) Speed-up code." />
-    <option name="LAST_COMMIT_MESSAGE" value="1) Speed-up code." />
+    <MESSAGE value="1) Replace pointer with array." />
+    <option name="LAST_COMMIT_MESSAGE" value="1) Replace pointer with array." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -633,16 +722,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/Files.c</url>
-          <line>35</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/Files.c</url>
-          <line>41</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/Files.c</url>
           <line>180</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
@@ -658,101 +737,113 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/psort.c</url>
-          <line>140</line>
+          <line>141</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/pbitonic.c</url>
+          <line>105</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/pbitonic.c</url>
+          <line>144</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/pbitonic.c</url>
+          <line>240</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/pbitonic.c</url>
+          <line>231</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/pbitonic.c</url>
+          <line>157</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/pbitonic.c</url>
+          <line>236</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/pbitonic.c</url>
+          <line>185</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/pbitonic.c</url>
+          <line>179</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/pbitonic.c</url>
+          <line>221</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/pbitonic.c</url>
+          <line>206</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="51" />
+      <option name="time" value="94" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>sizeof(struct row)</expression-string>
+        <expression-string>greatestPowerOfTwoLessThan(8)</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>sizeof(row)</expression-string>
+        <expression-string>greatestPowerOfTwoLessThan</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rows</expression-string>
+        <expression-string>a</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rows-&gt;key</expression-string>
+        <expression-string>*greatestPowerOfTwoLessThan(7852123)</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rows[0].key</expression-string>
+        <expression-string>(int)greatestPowerOfTwoLessThan(7852123)</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rows[0]</expression-string>
+        <expression-string>greatestPowerOfTwoLessThan(7852123)</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rows[3]</expression-string>
+        <expression-string>a[0].key</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rows[6]</expression-string>
+        <expression-string>a[2].key</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rows[5]</expression-string>
+        <expression-string>a[1].key</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Utils/timer.c" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/clion64.vmoptions">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.cpp" />
-    <entry file="file:///usr/include/x86_64-linux-gnu/bits/fcntl-linux.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/x86_64-linux-gnu/sys/mman.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/string.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="41" column="19" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sorting/nomp_mergesort_working.c" />
-    <entry file="file://$PROJECT_DIR$/Sorting/get_time.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Utils/Timer.c" />
     <entry file="file://$PROJECT_DIR$/DataStructures/Structures.h" />
     <entry file="file://$PROJECT_DIR$/src/main.cpp" />
@@ -772,24 +863,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nomp_mergesort.c" />
-    <entry file="file://$PROJECT_DIR$/Sorting/omp_mergesort.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="128" column="1" selection-start-line="128" selection-start-column="1" selection-end-line="128" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/stdlib.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="826" column="12" selection-start-line="826" selection-start-column="12" selection-end-line="826" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/build/release/output.txt" />
-    <entry file="file://$PROJECT_DIR$/src/build/release/output">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sorting/serial_mergesort.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
@@ -837,23 +911,6 @@
     <entry file="file://$PROJECT_DIR$/src/qsort3way.c" />
     <entry file="file://$PROJECT_DIR$/src/heapSort.c" />
     <entry file="file://$PROJECT_DIR$/src/qsort3way.h" />
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sub_zip.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/old_compile.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -865,16 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/old_sub_zip.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Timer.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -894,42 +941,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/run_sort.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/compile.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/input">
-      <provider selected="true" editor-type-id="LargeFileEditor" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/input_old">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sort.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/radixmp.h" />
+    <entry file="file://$PROJECT_DIR$/src/radixmp.c" />
     <entry file="file://$PROJECT_DIR$/src/Structures.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -937,23 +950,138 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Timer.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pmergeSort.cpp" />
+    <entry file="file://$PROJECT_DIR$/Sorting/omp_mergesort.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="101" column="4" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_compile.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/stdlib.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="826" column="12" selection-start-line="826" selection-start-column="12" selection-end-line="826" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sorting/output" />
+    <entry file="file://$PROJECT_DIR$/src/inut" />
     <entry file="file://$PROJECT_DIR$/src/Files.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="170" column="5" selection-start-line="170" selection-start-column="5" selection-end-line="170" selection-end-column="5" />
+        <state relative-caret-position="222">
+          <caret line="180" selection-start-line="180" selection-end-line="180" />
           <folding>
             <element signature="e#1#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sort.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/run_sort.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/omp_mergesort.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2684">
+          <caret line="122" column="17" selection-start-line="122" selection-start-column="17" selection-end-line="122" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old_sub_zip.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sub_zip.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="68" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/input_old">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" selection-start-line="8" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/input">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+      <provider editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/build/release/output">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/psort.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+        <state relative-caret-position="2992">
+          <caret line="136" column="30" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="30" />
           <folding>
             <element signature="e#1#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/compile.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pbitonic.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4818">
+          <caret line="219" column="12" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ompExample.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="29" column="2" lean-forward="true" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
         </state>
       </provider>
     </entry>

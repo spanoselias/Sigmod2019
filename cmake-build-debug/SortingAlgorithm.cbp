@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/elias/Desktop/Sigmod2019/src/psort.c">
+		<Unit filename="/home/elias/Desktop/Sigmod2019/src/pbitonic.c">
 			<Option target="SortingAlgorithm"/>
 		</Unit>
 		<Unit filename="/home/elias/Desktop/Sigmod2019/CMakeLists.txt">

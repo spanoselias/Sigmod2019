@@ -10,16 +10,14 @@
 #define UTILS_TIMER_C
 
 clock_t startTimer() {
-    clock_t t;
-    t = clock();
-    return t;
+    return clock();
 }
 
-void printExecutionTime(const clock_t t, const char *msg) {
-    clock_t t1 = clock() - t;
-    double time_taken = (((double) t1) / CLOCKS_PER_SEC); // in seconds
+void printExecutionTime(const clock_t tstart, const char *msg) {
+    clock_t tstop = clock();
+    double time_taken = (tstop - tstart) / ((double) CLOCKS_PER_SEC); // in seconds
 
-    printf("%s took: [%f] seconds to execute. \n", msg, time_taken);
+    printf("%s took: [%.4lf] seconds to execute. \n", msg, time_taken);
 }
 
 #endif //SORTINGALGORITHM_STRUCTURES_H
