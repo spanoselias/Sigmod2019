@@ -102,19 +102,19 @@ void parallel_quicksort(row *array, int left, int right, int depth) {
     }
 }
 
-packedRow *transformStruct(row *rows, long totalRows) {
-
-    packedRow *packedRows = (packedRow *) (malloc(sizeof(packedRow) * total_rows));
-    for (int i = 0; i < totalRows; i++) {
-        memcpy(packedRows->key, rows[i].key, 10);
-        memcpy(packedRows->data, rows[i].data, 90);
-        free(rows[i].data);
-    }
-
-    free(rows);
-
-    return packedRows;
-}
+//packedRow *transformStruct(row *rows, long totalRows) {
+//
+//    packedRow *packedRows = (packedRow *) (malloc(sizeof(packedRow) * total_rows));
+//    for (int i = 0; i < totalRows; i++) {
+//        memcpy(packedRows->key, rows[i].key, 10);
+//        memcpy(packedRows->data, rows[i].data, 90);
+//        free(rows[i].data);
+//    }
+//
+//    free(rows);
+//
+//    return packedRows;
+//}
 
 
 int debug(int argc, char **argv) {
@@ -129,9 +129,7 @@ int debug(int argc, char **argv) {
     total_rows = calTotalNoOfRows(argv[1]);
     printExecutionTime(t11, "Calculating file size time:");
 
-    clock_t t12 = startTimer();
     row *rows = (row *) (malloc(sizeof(struct row) * total_rows));
-    printExecutionTime(t12, "Malloc the array: ");
 
     clock_t t0 = startTimer();
     readNFile(rows, total_rows, argv[1]);
@@ -141,9 +139,9 @@ int debug(int argc, char **argv) {
     parallel_quicksort(rows, 0, total_rows - 1, 10);
     printExecutionTime(t1, "Sorting the file");
 
-    clock_t t13 = startTimer();
-//    packedRow* pRows = transformStruct(rows, total_rows);
-    printExecutionTime(t13, "Transforming the array");
+//   clock_t t13 = startTimer();
+//   packedRow* pRows = transformStruct(rows, total_rows);
+//   printExecutionTime(t13, "Transforming the array");
 
     clock_t t2 = startTimer();
     bulkWriteOutput(rows, total_rows, argv[2]);
@@ -166,12 +164,12 @@ int release(int argc, char **argv) {
 
     parallel_quicksort(rows, 0, total_rows - 1, 10);
 
-    bulkWriteOutput(rows, total_rows, argv[2]);
+    writeOutput(rows, total_rows, argv[2]);
 }
 
 int main(int argc, char **argv) {
 
-    release(argc, argv);
+    debug(argc, argv);
 
     return 0;
 }

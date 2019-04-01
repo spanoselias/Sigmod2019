@@ -17,7 +17,6 @@
 
 #define ROWSIZE 100
 
-
 unsigned int calTotalNoOfRows(const char *fileName) {
     struct stat st;
 
@@ -39,8 +38,8 @@ void readNFile(row *rows, long totalRows, char *filename) {
     long idx = 0;
     while (fread(&buf, 100, 1, fd)) {
 
-//       rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
-//        rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
+//     rows[idx].key = (unsigned char *) (malloc(sizeof(unsigned char) * 10));
+//     rows[idx].data = (unsigned char *) (malloc(sizeof(unsigned char) * 90));
 
         memcpy(rows[idx].key, buf, 10);
         memcpy(rows[idx].data, buf + 10, 90);
@@ -133,20 +132,28 @@ void bulkfRead(row *rows, const long totalRows, char *input) {
 //    fclose(file);
 //}
 
-
-void writeOutput(const row *rows, const long int totalRows, char *filename) {
+void writeOutput(const row *rows, const long int totalRows, const char *filename) {
     FILE *write_ptr;
     write_ptr = fopen(filename, "wb");  // w for write, b for binary
-//    unsigned char record[101];
+    unsigned char *record = (unsigned char* ) (malloc(100 * totalRows));
 
+    int offset = 0;
     for (int i = 0; i < totalRows; i++) {
 
 //      bzero(record, sizeof(record));
+        memcpy(record + offset, rows[i].key, 10);
+        memcpy((record + 10 + offset), rows[i].data, 90);
 
-        fwrite(rows[i].key, 10, 1, write_ptr);
-        fwrite(rows[i].data, 90, 1, write_ptr);
+//        free(rows[i].data);
+
+        offset += 100;
+
+//     fwrite(rows[i].key, 10, 1, write_ptr);
+//     fwrite(rows[i].data, 90, 1, write_ptr);
 
     }
+
+    fwrite(record, totalRows * 100, 1, write_ptr);
 
     fclose(write_ptr);
 }
@@ -160,7 +167,7 @@ void writeBStructOutput(const packedRow *rows, const long int totalRows, char *f
 
 //   memcpy(record, rows[i].key, 10);
 //   memcpy((record + 10), rows[i].data, 90);
-     fwrite(rows, 100, 1, write_ptr);
+        fwrite(rows, 100, 1, write_ptr);
 
     }
 
@@ -178,7 +185,7 @@ void bulkWriteOutput(row *rows, const long int totalRows, const char *ouput) {
     }
 //    int i;
 //    for (i = 0; i < totalRows; i++) {
-     fwrite(rows, totalRows * 100, 1, outfile);
+    fwrite(rows, totalRows * 100, 1, outfile);
 //    }
     fclose(outfile); /* never forget to close or your data won't be written. */
 }
