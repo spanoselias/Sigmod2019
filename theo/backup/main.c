@@ -5,7 +5,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <pthread.h>
-#include <string.h>
 #include "myFunctions.h"
 
 unsigned long long inputFileSize;

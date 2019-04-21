@@ -13,16 +13,18 @@ stdlib.h
 -
 time.h
 -
-string.h
+fcntl.h
+-
+sys/stat.h
+-
+unistd.h
 -
 pthread.h
 -
-unistd.h
+string.h
 -
 myFunctions.h
 /home/f/sigmod2019/theo/myFunctions.h
 
 /home/f/sigmod2019/theo/myFunctions.h
-sys/stat.h
--
 
