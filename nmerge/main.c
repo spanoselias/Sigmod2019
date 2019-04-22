@@ -87,7 +87,7 @@ int main(int argc, char **argv) {
     }
 
     FILE *input = fopen(argv[1], "r");
-    fileSize = getFileSize("input");
+    fileSize = getFileSize(argv[1]);
     arraySize = fileSize / THREADS;
 
     time_t totalStart = time(NULL);
