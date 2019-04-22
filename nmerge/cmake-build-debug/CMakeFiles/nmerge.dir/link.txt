@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/nmerge.dir/main.c.o  -o nmerge -pthread 
